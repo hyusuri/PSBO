@@ -28,12 +28,12 @@ Anti Pattern
 ## Hasil dan pembahasan
 
 - Use case diagram
-  ![](https://github.com/hyusuri/PSBO/blob/main/img/psbo-Use%20Case.jpg)
+  ![1](https://github.com/hyusuri/PSBO/blob/main/img/psbo-Use%20Case.jpg)
 
 - Activity diagram
 
 - Class diagram
-  ![](https://github.com/hyusuri/PSBO/blob/main/img/psbo-Class%20Diagram.jpg)
+  ![2](https://github.com/hyusuri/PSBO/blob/main/img/psbo-Class%20Diagram.jpg)
 
 - Entity Relationship Diagram
 
