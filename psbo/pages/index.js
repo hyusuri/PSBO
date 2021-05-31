@@ -1,8 +1,21 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../component/navbar'
+import Style from '../styles/Home.module.css'
+import Link from 'next/link'
 
-export default function Home() {
+
+export const getStaticProps = async () => {
+
+  const res = await fetch('https://jsonplaceholder.typicode.com/comments');
+  const data = await res.json();
+
+  return {
+    props: { beasiswas: data }
+  }
+}
+
+export default function Home({ beasiswas }) {
   return (
   <>
     <Head>
@@ -11,28 +24,14 @@ export default function Home() {
 
     <div>
       <h1>Selamat Datang di IPB Scholar</h1>
-      
-      <div class="row">
-        <div class="column">
-          <h2>Column 1</h2>
-          <p>Some text..</p>
-        </div>
-        <div class="column">
-          <h2>Column 2</h2>
-          <p>Some text..</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="column">
-          <h2>Column 3</h2>
-          <p>Some text..</p>
-        </div>
-        <div class="column">
-        <h2>Column 4</h2>
-        <p>Some text..</p>
-        </div>
-      </div>
+      {beasiswas.map(beasiswa => (
+        <Link href={'detail-beasiswa/'+ beasiswa.id} key={beasiswa.id}>
+          <a className = {Style.single}>
+            <h3>{beasiswa.name}</h3>
+            <h3>{beasiswa.body}</h3>
+          </a>
+        </Link>
+      ))}
     </div>
   </>
   )
