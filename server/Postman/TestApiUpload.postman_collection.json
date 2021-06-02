@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "eb0e1014-1356-48cf-a4cb-103c8ff38e99",
+		"name": "TestApiUpload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3001/lampiran/upload-kk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "zyru",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Yusuri/Pictures/2965994814.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3001/lampiran/upload-kk",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"lampiran",
+						"upload-kk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/lampiran/upload-ktm",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "zyru",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/Yusuri/Pictures/29659948124.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3001/lampiran/upload-ktm",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"lampiran",
+						"upload-ktm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/images/1622643151626-csi-re.png",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/images/1622643151626-csi-re.png",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"images",
+						"1622643151626-csi-re.png"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3001/lampiran/user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"zyru\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3001/lampiran/user",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"lampiran",
+						"user"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
