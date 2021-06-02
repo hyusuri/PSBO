@@ -5,6 +5,26 @@ import Head from "next/head"
 import Image from 'next/image'
 
 const Profile = () => {
+
+    const fetch = require('node-fetch')
+    const payload = fetch('http://localhost:3001/lampiran/user',
+    {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            "username": "zyrex"
+        })
+    });
+
+        payload.then(response => response.json())
+        .then(jsonResponse => {
+            console.log(jsonResponse);
+        }).catch(error => {
+            console.log(error);
+        })
+
     return (
     <>
         <Head>
