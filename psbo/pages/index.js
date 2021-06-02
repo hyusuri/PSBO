@@ -23,12 +23,12 @@ export default function Home({ beasiswas }) {
     </Head>
 
     <div>
-      <h1>Selamat Datang di IPB Scholar</h1>
+      <h1 className="text-4xl m-10">Selamat Datang di IPB Scholar</h1>
       {beasiswas.map(beasiswa => (
         <Link href={'detail-beasiswa/'+ beasiswa.id} key={beasiswa.id}>
           <a className = {Style.single}>
-            <h3>{beasiswa.name}</h3>
-            <h3>{beasiswa.body}</h3>
+            <h3 className="text-2xl m-5">{beasiswa.name}</h3>
+            <p className="text-base m-5">{beasiswa.body}</p>
           </a>
         </Link>
       ))}
