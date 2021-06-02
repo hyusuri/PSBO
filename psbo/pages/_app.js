@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import "@material-tailwind/react/tailwind.css";
 import 'tailwindcss/tailwind.css'
 import Layout from '../component/layout'
 

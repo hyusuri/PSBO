@@ -3,13 +3,13 @@ import Image from 'next/image'
 
 const Navbar = () => {
     return(
-        <nav className="nav">
+        <nav className="font-sans">
             <div className="logo">
                 <Image src="/ipbscholar.png" width={150} height={60} />
             </div>
             
-            <Link href="/"><a>Home</a></Link>
-            <Link href="/profile"><a>Profile</a></Link>
+            <Link className="font-sans" href="/"><a>Home</a></Link>
+            <Link className="font-sans" href="/profile"><a>Profile</a></Link>
         </nav>
     )
 }

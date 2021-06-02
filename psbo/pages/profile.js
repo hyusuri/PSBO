@@ -1,4 +1,6 @@
-import { Button } from "@material-ui/core";
+// import { Button } from "@material-ui/core";
+import React from "react";
+import Button from "@material-tailwind/react/Button";
 import Head from "next/head"
 import Image from 'next/image'
 
@@ -37,13 +39,13 @@ const Profile = () => {
                     </div>
                     
                     {/* <div className="font-medium"> */}
-                        <div className="font-medium text-cyan-600">
+                        <div className="font-medium text-black-600">
                             Nama Lengkap
                         </div>
-                        <div className="text-cyan-600">
+                        <div className="text-black-600">
                             G64192002
                         </div>
-                        <div className="text-cyan-600">
+                        <div className="text-black-600">
                             Fakultas X
                         </div>
                         <div className="text-black-500">
@@ -53,39 +55,33 @@ const Profile = () => {
                 </div>
             </div>
 
-            <div className="text-center m-10 space-y-2">
+            <div className="grid justify-items-center text-center m-10 space-y-2">
                     <label for="foto">Ubah Foto</label>
                     <div>
                         <input id="foto" type="file"></input>
-                        <Button variant="contained" color="primary">simpan</Button>
                     </div>
+                    <Button className="">simpan</Button>
             </div>
 
             <h2 className="text-3xl m-10">Berkas Tambahan</h2>
             
-            <form className="text-center m-8 md:flex rounded-xl p-8 md:p-0 gap-x-16 justify-center">
-                {/* <select id="berkas" name="berkas">
-                    <option value="Kartu keluarga">Kartu Keluarga</option>
-                    <option value="KTM">KTM</option>
-                </select> */}
+            <div className="text-center m-8 md:flex rounded-xl p-8 md:p-0 gap-x-16 justify-center">
                 <div className="m-10 space-y-2">
                     <label for="ktm">Kartu Tanda Mahasiswa</label>
                     <div>
                         <input id="ktm" type="file"></input>
-                        <Button variant="contained" color="primary">simpan</Button>
                     </div>
+                    <Button className="mx-20">simpan</Button>
                 </div>
                 
                 <div className="m-10 space-y-2">
-                    <label for="kk">Kartu Keluarga</label>
-                    <div >
-                        <input  id="kk" type="file"></input>
-                        <Button variant="contained" color="primary">simpan</Button>
+                    <label className="mr-10" for="kk">Kartu Keluarga</label>
+                    <div>
+                        <input id="kk" type="file"></input>
                     </div>
+                    <Button className="mx-20">simpan</Button>
                 </div>
-                
-                
-            </form>
+            </div>
 
 
         </div>
