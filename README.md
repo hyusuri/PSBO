@@ -36,6 +36,7 @@ Anti Pattern
 #### Activity Diagram
 
 #### Entity Relationship Diagram
+- ![4](https://github.com/hyusuri/PSBO/blob/main/img/ERD_PSBO.jpg)
 
 #### Arsitektur sistem
 
