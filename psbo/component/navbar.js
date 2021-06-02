@@ -7,7 +7,7 @@ const Navbar = () => {
             <div className="logo">
                 <Image src="/ipbscholar.png" width={150} height={60} />
             </div>
-            
+            <Link className="font-sans" href="/login"><a>Login</a></Link>
             <Link className="font-sans" href="/"><a>Home</a></Link>
             <Link className="font-sans" href="/profile"><a>Profile</a></Link>
         </nav>
