@@ -1,3 +1,6 @@
+import jwt from 'jsonwebtoken';
+
+const KEY = process.env.JWT_KEY;
 
 export default async (req, res) => {
 	if (req.method !== 'POST') {
@@ -20,5 +23,25 @@ export default async (req, res) => {
 		}
 		);
 	const data = await response.json();
-	return res.status(200).json(data);
-};
+	console.log(data)
+	if (!data.Error) {
+		const payload = {
+			MahasiswaId: data.MahasiswaId,
+			Nama: data.Nama,
+			NIM: data.NIM,
+			Mayor: data.Mayor,
+			KodeStrata: data.KodeStrata
+		};
+		let token_jwt = jwt.sign(payload, KEY,
+			// 1 day in seconds
+			{expiresIn: 86400,},
+			);
+		res.status(200).json({
+			success: true,
+			token: token_jwt});
+		}
+		else{
+			res.status(400).json(data);
+		}
+
+	};
