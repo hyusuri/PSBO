@@ -23,7 +23,6 @@ export default async (req, res) => {
 		}
 		);
 	const data = await response.json();
-	console.log(data)
 	if (!data.Error) {
 		const payload = {
 			MahasiswaId: data.MahasiswaId,
