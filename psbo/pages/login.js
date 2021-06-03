@@ -13,6 +13,7 @@ import InputIcon from "@material-tailwind/react/InputIcon";
 import H5 from "@material-tailwind/react/Heading5";
 
 import React, { useContext, useState, Component } from "react"
+import axios from "axios"
 
 class LoginPage extends Component {
   constructor() {
@@ -34,9 +35,29 @@ class LoginPage extends Component {
   }
 
   handleSubmit(evt) {
-    alert('Username: ' + this.state.username + ' Password : ' + this.state.password);
+    console.log('Username: ' + this.state.username + ' Password : ' + this.state.password);
       evt.preventDefault();
-    // evt.preventDefault();
+      
+      var postData = {
+        Username: this.state.username,
+        Password: this.state.password
+      };
+      
+      let axiosConfig = {
+        headers: {
+          'X-IPBAPI-TOKEN': 'Bearer d46d5926-b9e5-33ad-86df-6c60a9d23bee',
+          'Content-Type': 'application/json'
+        }
+      };
+      
+      axios.post('https://api.ipb.ac.id/v1/Authentication/LoginMahasiswa', postData, axiosConfig)
+      .then((res) => {
+        console.log("RESPONSE RECEIVED: ", res);
+      })
+      .catch((err) => {
+        console.log("AXIOS ERROR: ", err);
+      })
+
 
     if (!this.state.username) {
       return this.setState({ error: 'Username is required' });
@@ -78,7 +99,7 @@ class LoginPage extends Component {
             </h3>
             }
                 <CardHeader color="lightBlue" size="lg">
-                    <H5 color="white">IPB Scholar</H5>
+                    <H5 color="gray">IPB Scholar</H5>
                 </CardHeader>
 
                 <CardBody >
