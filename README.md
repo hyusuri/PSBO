@@ -34,6 +34,7 @@ Anti Pattern
 - ![2](https://github.com/hyusuri/PSBO/blob/main/img/psbo-Class%20Diagram.jpg)
 
 #### Activity Diagram
+- ![3](https://github.com/hyusuri/PSBO/blob/main/img/activitydiag.png)
 
 #### Entity Relationship Diagram
 - ![4](https://github.com/hyusuri/PSBO/blob/main/img/ERD_PSBO.jpg)
