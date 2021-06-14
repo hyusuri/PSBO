@@ -11,46 +11,78 @@ Dalam web tersebut, mahasiswa dapat login menggunakan akun IPB. Setelah login, m
 2. Sebagai Mahasiswa, Saya ingin mendapatkan informasi pembukaan beasiswa yang sesuai dan dapat Saya daftar (contoh beasiswa khusus fakultas/departemen tertentu), sehingga Saya lebih mudah mendapatkan informasi beasiswa yang dapat didaftar dan menentukan beasiswa yang sesuai
 
 ## Spesifikasi teknis lingkungan pengembangan
-#### Software :
-- VS Code
-#### Hardware :
+### Software :
+- `Visual Studio Code`
+![vs](https://github.com/hyusuri/PSBO/blob/main/img/vs_logo.png)
+- `Postman`
+![pm](https://github.com/hyusuri/PSBO/blob/main/img/pm_logo.png)
 
-#### Tech Stack :
-- Nextjs
+### Hardware :
+- Processor ...
+- RAM ...
+- Harddisk ... 
+- GPU ...
 
-## Konsep OOP yang digunakan
+### Tech Stack :
+- `Next JS`
+- `Node JS`
+- `MySQL`
+
+## Konsep OOP yang Digunakan
+Konsep OOP yang digunakan adalah ...
 
 
+## Tipe Desain Pengembangan yang Digunakan
+Tipe desain yang digunakan adalah Anti-Pattern. Anti-Pattern adalah ...
 
-## Tipe desain pengembangan yang digunakan (Pattern/Anti Pattern)
-Anti Pattern
 
-## Hasil dan pembahasan
+## Hasil dan Pembahasan
+### Use Case Diagram
+![usecase](https://github.com/hyusuri/PSBO/blob/main/img/psbo-Use%20Case.jpg)
 
-#### Use case diagram :
-- ![1](https://github.com/hyusuri/PSBO/blob/main/img/psbo-Use%20Case.jpg)
+### Class Diagram
+![class](https://github.com/hyusuri/PSBO/blob/main/img/psbo-Class%20Diagram.jpg)
 
-#### Class diagram
-- ![2](https://github.com/hyusuri/PSBO/blob/main/img/psbo-Class%20Diagram.jpg)
+### Activity Diagram
+![activity](https://github.com/hyusuri/PSBO/blob/main/img/activitydiag.png)
 
-#### Activity Diagram
-- ![3](https://github.com/hyusuri/PSBO/blob/main/img/activitydiag.png)
+### Entity Relationship Diagram
+![erd](https://github.com/hyusuri/PSBO/blob/main/img/ERD_PSBO.jpg)
 
-#### Entity Relationship Diagram
-- ![4](https://github.com/hyusuri/PSBO/blob/main/img/ERD_PSBO.jpg)
+### Arsitektur Sistem
 
-#### Arsitektur sistem
 
-#### Fungsi utama yang dikembangkan
+### Fungsi Utama yang Dikembangkan
+- Mahasiswa
+    - Melihat informasi Beasiswa
+    - Mendaftar suatu Beasiswa
+    - Mengunggah berkas Beasiswa
+- Admin
+    - Melihat informasi Beasiswa
+    - Membuat form Beasiswa
 
-#### Fungsi CRUD
+### Fungsi CRUD
+- Create
+    - Membuat form Beasiswa (Admin)
+- Read
+    - Melihat informasi Beasiswa
+    - Melihat profil (Mahasiswa)
+- Update
+    - 
+- Delete
+    - 
 
 ## Hasil implementasi
+### Screenshot Sistem
 
-#### Screenshot sistem :
+## Saran untuk Pengembangan Selanjutnya
 
-## Saran untuk pengembangan selanjutnya :
-
-## Developer dan job desc
-
+## Developer & Job Desc
+|NIM|Nama|Role|
+|---|---|---|
+|G64180007|Arya Aminata|...|
+|G64180036|Hafizh Yusuf Buchori|...|
+|G64180064|Muhammad Rayhan Adyatma|...|
+|G64180075|Pradhipta Trimanggala Satya|...|
+|G64180084|Faiz Muhammad 'Alauddin|...|
 
