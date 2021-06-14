@@ -16,7 +16,7 @@ const upload = multer({ storage: storage })
 
 router.post("/user", checkuser)
 
-router.post('/upload-kk', upload.single('image'), addKk)
-router.post('/upload-ktm', upload.single('image'), addKtm)
+router.post('/upload-kk', upload.single('image-kk'), addKk)
+router.post('/upload-ktm', upload.single('image-ktm'), addKtm)
 
 module.exports = router

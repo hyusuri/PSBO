@@ -63,10 +63,11 @@ const LoginPage = () => {
       )
       .then((res) => {
         console.log("Login Success", res.data);
-        const { Token, Nama, NIM } = res.data;
+        const { Token, Nama, NIM, username } = res.data;
         Cookies.set("token", Token, { sameSite: "strict", expires: 1 });
         Cookies.set("name", Nama, { sameSite: "strict", expires: 1 });
         Cookies.set("nim", NIM, { sameSite: "strict", expires: 1 });
+        Cookies.set("username", username, { sameSite: "strict", expires: 1 });
         setError({ error: "" });
 
         setUser(localStorage.getItem("userAuth"));

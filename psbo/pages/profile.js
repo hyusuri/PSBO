@@ -8,6 +8,7 @@ import Cookies from 'js-cookie';
 import cookie from "cookie"
 import axios from "axios"
 import { GetServerSideProps } from 'next'
+import { useState } from "react";
 
 export const getServerSideProps = async ({ req, res }) => {
 	let cookies = cookie.parse(req.headers.cookie);
@@ -42,12 +43,54 @@ export const getServerSideProps = async ({ req, res }) => {
 		const user_data = api_call.data;
 
 		return {
-			props: { user_data },
+			props: { user_data,
+			cookies },
 		};
 	};
 
-	const Profile =  ({ user_data }) => {
+	const Profile =  ({ user_data, cookies }) => {
 
+		const [image_kk, setImageKK] = useState(null);
+		const [image_ktm, setImageKTM] = useState(null);
+
+		const handleimageKKChange = (evt) => {
+			console.log(evt.target.files[0])
+			
+	 	};
+		 const handleimageKTMChange = (evt) => {
+			console.log(evt.target.files[0])
+	 	};
+		const handleSubmit = async (event) => {
+			event.prefentDefault();
+			const datapost = {
+				'image-kk': image_kk,
+				'image-ktm': image_ktm
+			}
+
+		const axiosConfig = {
+			headers: {
+			  "Content-Type": "multipart/form-data",
+			},
+		  };
+		
+		const api_call = await axios
+		.post(
+			"http://localhost:3001/lampiran/upload-kk",
+			datapost,
+			axiosConfig
+		  )
+		  .post(
+			"http://localhost:3001/lampiran/upload-ktm",
+			datapost,
+			axiosConfig
+		  )
+		  .then((res) => {
+			  console.log(res)
+		  })
+		  .catch((err) => {
+			  console.log(err)
+		  })
+		}
 		const fetch = require('node-fetch')
 		const payload = fetch('http://localhost:3001/lampiran/user',
 		{
@@ -56,13 +99,13 @@ export const getServerSideProps = async ({ req, res }) => {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				"username": "zyrex"
+				"username": cookies.username
 			})
 		});
 
 		payload.then(response => response.json())
 		.then(jsonResponse => {
-			console.log(jsonResponse);
+			//console.log(jsonResponse);
 		}).catch(error => {
 			console.log(error);
 		})
@@ -139,12 +182,14 @@ export const getServerSideProps = async ({ req, res }) => {
 	</div>
 
 	<h2 className="text-3xl m-10">Berkas Tambahan</h2>
+	
+	<form onSubmit={handleSubmit} >
 
 	<div className="text-center m-8 md:flex rounded-xl p-8 md:p-0 gap-x-16 justify-center">
 	<div className="m-10 space-y-2">
 	<label for="ktm">Kartu Tanda Mahasiswa</label>
 	<div>
-	<input id="ktm" type="file"></input>
+	<input id="ktm" value={image_ktm} type="file" onChange={handleimageKTMChange}></input>
 	</div>
 	<Button className="mx-20">simpan</Button>
 	</div>
@@ -152,11 +197,14 @@ export const getServerSideProps = async ({ req, res }) => {
 	<div className="m-10 space-y-2">
 	<label className="mr-10" for="kk">Kartu Keluarga</label>
 	<div>
-	<input id="kk" type="file"></input>
+	<input id="kk" value={image_kk} type="file" onChange={handleimageKKChange}></input>
 	</div>
 	<Button className="mx-20">simpan</Button>
 	</div>
 	</div>
+
+	</form>
+
 
 
 	</div>
