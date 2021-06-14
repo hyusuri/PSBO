@@ -9,7 +9,7 @@ const SECRET_KEY = process.env.JWT_KEY;
  * @params {jwtToken} extracted from cookies
  * @return {object} object of extracted token
  */
-export function verifyToken(jwtToken) {
+export async function verifyToken(jwtToken) {
   try {
     return jwt.verify(jwtToken, SECRET_KEY);
   } catch (e) {
