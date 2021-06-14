@@ -11,7 +11,6 @@ import cookie from "cookie"
 import axios from "axios"
 
 export const getServerSideProps = async ({ req, res }) => {
-    console.log(req.headers.cookie);
     if (req.headers.cookie === undefined) {
         return {
             props: {  },
@@ -23,7 +22,7 @@ export const getServerSideProps = async ({ req, res }) => {
     }
     let cookies = cookie.parse(req.headers.cookie);
     // console.log(cookies)
-
+    
     let axiosConfig = {
         headers: {
             'X-IPBAPI-TOKEN': 'Bearer 1f70343f-5478-38da-8aa7-47d662d2078a',
@@ -31,10 +30,15 @@ export const getServerSideProps = async ({ req, res }) => {
             'Authorization': 'Bearer ' + cookies.token
         }
     };
+
     const api_call = await axios.get(
         'https://api.ipb.ac.id/v1/Orang/Mahasiswa/BiodataSaya', 
         axiosConfig)
     .catch((err) => {
+        console.log("Request api error : ", err.response.status);
+    });
+
+    if (api_call === undefined) {
         return {
             props: {  },
             redirect: {
@@ -42,14 +46,16 @@ export const getServerSideProps = async ({ req, res }) => {
                 permanent: false,
             },
         };
-    });
-    
-    const user_data = api_call.data;
 
-    return {
-        props: { user_data },
+    } else {
+        const user_data = api_call.data;
+        // console.log(user_data);
+        return {
+            props: { user_data,
+                cookies },
+            };
+        }
     };
-};
 const formSubmit = () => {
     return (
         <>
