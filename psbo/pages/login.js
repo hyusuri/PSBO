@@ -63,9 +63,9 @@ const LoginPage = () => {
       )
       .then((res) => {
         console.log("Login Success", res.data);
-        const { Token, username } = res.data;
+        const { Token, Username } = res.data;
         Cookies.set("token", Token, { sameSite: "strict", expires: 1 });
-        Cookies.set("username", username, { sameSite: "strict", expires: 1 });
+        Cookies.set("username", Username, { sameSite: "strict", expires: 1 });
         setError({ error: "" });
 
         setUser(localStorage.getItem("userAuth"));

@@ -2,7 +2,6 @@ import { Tab } from "@material-ui/icons";
 import Head from "next/head";
 import AdminNavbar from "../../component/AdminNavbar";
 import Sidebar from "../../component/sidebar";
-import Tabb from "../../component/tab";
 import ScholarCard from "../../component/table";
 
 const AdminPage = () => {
