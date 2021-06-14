@@ -1,9 +1,9 @@
 # (PSBO) IPB Scholar - P1 - Kelompok 6
 
 ## Deskripsi Singkat Aplikasi
-Aplikasi yang dirancang merupakan suatu web app. Pada web tersebut para mahasiswa dapat membuat profile untuk diri mereka sendiri. Di dalam profile tersebut terdapat data-data umum mereka seperti nama, jurusan, transkrip nilai dan lainnya, dan juga terdapat prestasi-prestasi, rekam jejak organisasi dan pengalaman lainnya. Data diri tersebut diperoleh dari database simak, sedangkan data prestasi dan organisasi ini didapat dari data simawa. Selain data diri, mahasiswa juga dapat mengunggah berkas-berkas umum yang dibutuhkan suatu beasiswa seperti keterangan gaji orang tua, KTP/KK, dan lainnya jika tidak terdapat didalam database simak.
+Aplikasi yang dirancang berbentuk suatu web app. Pada web tersebut para mahasiswa dapat membuat profil untuk diri mereka sendiri. Di dalam profile tersebut terdapat data-data umum mereka seperti nama, jurusan dan lainnya, dan juga terdapat prestasi-prestasi, rekam jejak organisasi dan pengalaman lainnya. Data diri tersebut diperoleh dari database simak, sedangkan data prestasi dan organisasi ini didapat dari data simawa. Selain data diri, mahasiswa juga dapat mengunggah berkas-berkas umum yang dibutuhkan suatu beasiswa seperti keterangan gaji orang tua, KTP/KK, dan lainnya jika tidak terdapat di dalam database simak.
 
-Dalam web tersebut, mahasiswa dapat login menggunakan akun IPB. Setelah login, mahasiswa diarahkan ke homepage yang berisi daftar beasiswa yang sedang dibuka dan yang dapat didaftar oleh mahasiswa tersebut. Hal ini dibuat dengan tujuan agar mahasiswa lebih mudah menemukan beasiswa yang sesuai dengan persyaratannya, sehingga sistem dibuat agar hanya menampilkan list beasiswa yang dapat didaftar saja. Dalam homepage juga terdapat search box yang dapat digunakan untuk mencari beasiswa dan panel notifikasi yang berisi pemberitahuan tentang status pengajuan beasiswa (misal. tidak/lolos seleksi berkas, dll). Ketika seorang mahasiswa mendaftar atau mengajukan beasiswa, mahasiswa hanya perlu mengunggah berkas tambahan saja. Untuk data - data yang pasti ada dalam persyaratan pengajuan beasiswa sudah ada dalam sistem yang diambil dari database IPB.
+Dalam web tersebut, mahasiswa dapat login menggunakan akun IPB. Setelah login, mahasiswa diarahkan ke homepage yang berisi daftar beasiswa yang sedang dibuka dan yang dapat didaftar oleh mahasiswa tersebut. Hal ini dibuat dengan tujuan agar mahasiswa lebih mudah menemukan beasiswa yang sesuai dengan persyaratannya, sehingga sistem dibuat agar hanya menampilkan list beasiswa yang dapat didaftar saja. Dalam homepage juga terdapat search box yang dapat digunakan untuk mencari beasiswa. Ketika seorang mahasiswa mendaftar atau mengajukan beasiswa, mahasiswa hanya perlu mengunggah berkas tambahan saja. Untuk data - data yang pasti ada dalam persyaratan pengajuan beasiswa sudah ada dalam sistem yang diambil dari database IPB.
 
 
 ## User Story
@@ -13,9 +13,9 @@ Dalam web tersebut, mahasiswa dapat login menggunakan akun IPB. Setelah login, m
 ## Spesifikasi teknis lingkungan pengembangan
 ### Software :
 - `Visual Studio Code`
-![vs](https://github.com/hyusuri/PSBO/blob/main/img/vs_logo.png)
 - `Postman`
-![pm](https://github.com/hyusuri/PSBO/blob/main/img/pm_logo.png)
+- `Figma`
+- `Github`
 
 ### Hardware :
 - Processor ...
