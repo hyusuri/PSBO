@@ -3,10 +3,35 @@ import React from "react";
 import Button from "@material-tailwind/react/Button";
 import Head from "next/head"
 import Image from 'next/image'
-import {getCookies} from "../utils/utils"
+// import {getCookies} from "../utils/utils"
+import Cookies from 'js-cookie';
+import cookie from "cookie"
 import axios from "axios"
+import { GetServerSideProps } from 'next'
 
-const Profile =  () => {
+export const getServerSideProps = async ({ req, res }) => {
+	let cookies = cookie.parse(req.headers.cookie);
+	// console.log(cookies)
+	let axiosConfig = {
+		headers: {
+			'X-IPBAPI-TOKEN': 'Bearer 1f70343f-5478-38da-8aa7-47d662d2078a',
+			'Content-Type': 'application/json',
+			'Authorization': 'Bearer ' + cookies.token
+		}
+	};
+	const api_call = await axios.get(
+		'https://api.ipb.ac.id/v1/Orang/Mahasiswa/BiodataSaya', 
+		axiosConfig).catch((err) => {
+			return {props: {  },};
+		});
+	const user_data = api_call.data;
+
+  return {
+    props: { user_data },
+  };
+};
+
+const Profile =  ({ user_data }) => {
 
 	const fetch = require('node-fetch')
 	const payload = fetch('http://localhost:3001/lampiran/user',
@@ -31,16 +56,14 @@ const Profile =  () => {
 	// console.log(cookies);
 
 	// buat ngambil data lewat api
-	let axiosConfig = {
-		headers: {
-			'X-IPBAPI-TOKEN': 'Bearer 1f70343f-5478-38da-8aa7-47d662d2078a',
-			'Content-Type': 'application/json',
-			'Authorization': 'Bearer '
-		}
-	};
-	// const api_call = axios.get('https://api.ipb.ac.id/v1/Orang/Mahasiswa/BiodataSaya', axiosConfig);
-	// console.log(api_call);
-	// 
+	// const api_call = async() => {
+	// 	const res = await axios.get('https://api.ipb.ac.id/v1/Orang/Mahasiswa/BiodataSaya', axiosConfig);
+	// 	const result = res.json();
+	// 	console.log(res.data);
+	// }
+	// // 
+	// console.log(api_call.res);
+	// console.log(api_call.result);
 
 	return (
 		<>
@@ -77,16 +100,16 @@ const Profile =  () => {
 
 		{/* <div className="font-medium"> */}
 		<div className="font-medium text-black-600">
-		Nama Lengkap
+		{user_data.Nama}
 		</div>
 		<div className="text-black-600">
-		G64192002
+		{user_data.NIM}
 		</div>
 		<div className="text-black-600">
-		Fakultas X
+		{user_data.Fakultas}
 		</div>
 		<div className="text-black-500">
-		Departemen Y
+		{user_data.Departemen}
 		</div>
 	{/* </div> */}
 	</div>
@@ -125,5 +148,7 @@ const Profile =  () => {
 	</>
 	)
 }
+
+
 
 export default Profile;

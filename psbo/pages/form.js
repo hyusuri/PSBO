@@ -6,20 +6,63 @@ import React from "react";
 import Formulir from "../component/form"
 import Input from "@material-tailwind/react/Input";
 import Button from "@material-tailwind/react/Button";
+import { GetServerSideProps } from 'next'
+import cookie from "cookie"
+import axios from "axios"
 
+export const getServerSideProps = async ({ req, res }) => {
+    console.log(req.headers.cookie);
+    if (req.headers.cookie === undefined) {
+        return {
+            props: {  },
+            redirect: {
+                destination: '/login',
+                permanent: false,
+            },
+        };
+    }
+    let cookies = cookie.parse(req.headers.cookie);
+    // console.log(cookies)
+
+    let axiosConfig = {
+        headers: {
+            'X-IPBAPI-TOKEN': 'Bearer 1f70343f-5478-38da-8aa7-47d662d2078a',
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + cookies.token
+        }
+    };
+    const api_call = await axios.get(
+        'https://api.ipb.ac.id/v1/Orang/Mahasiswa/BiodataSaya', 
+        axiosConfig)
+    .catch((err) => {
+        return {
+            props: {  },
+            redirect: {
+                destination: '/login',
+                permanent: false,
+            },
+        };
+    });
+    
+    const user_data = api_call.data;
+
+    return {
+        props: { user_data },
+    };
+};
 const formSubmit = () => {
     return (
-    <>
+        <>
         <Head>
-            <title>IPB Scholar | Daftar</title>
+        <title>IPB Scholar | Daftar</title>
         </Head>
         <div>
-            <h1 className="text-4xl m-10">Daftar Beasiswa</h1> 
+        <h1 className="text-4xl m-10">Daftar Beasiswa</h1> 
         </div>
-        
-        <Formulir />
-    </>
-    )
-}
 
-export default formSubmit;
+        <Formulir />
+        </>
+        )
+    }
+
+    export default formSubmit;
