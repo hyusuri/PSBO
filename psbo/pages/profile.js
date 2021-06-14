@@ -12,6 +12,15 @@ import { GetServerSideProps } from 'next'
 export const getServerSideProps = async ({ req, res }) => {
 	let cookies = cookie.parse(req.headers.cookie);
 	// console.log(cookies)
+	if (req.headers.cookie === undefined) {
+		return {
+			props: {  },
+			redirect: {
+				destination: '/login',
+				permanent: false,
+			},
+		};
+	}
 	let axiosConfig = {
 		headers: {
 			'X-IPBAPI-TOKEN': 'Bearer 1f70343f-5478-38da-8aa7-47d662d2078a',
@@ -22,35 +31,41 @@ export const getServerSideProps = async ({ req, res }) => {
 	const api_call = await axios.get(
 		'https://api.ipb.ac.id/v1/Orang/Mahasiswa/BiodataSaya', 
 		axiosConfig).catch((err) => {
-			return {props: {  },};
+			return {
+				props: {  },
+				redirect: {
+					destination: '/login',
+					permanent: false,
+				},
+			};
 		});
-	const user_data = api_call.data;
+		const user_data = api_call.data;
 
-  return {
-    props: { user_data },
-  };
-};
+		return {
+			props: { user_data },
+		};
+	};
 
-const Profile =  ({ user_data }) => {
+	const Profile =  ({ user_data }) => {
 
-	const fetch = require('node-fetch')
-	const payload = fetch('http://localhost:3001/lampiran/user',
-	{
-		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify({
-			"username": "zyrex"
+		const fetch = require('node-fetch')
+		const payload = fetch('http://localhost:3001/lampiran/user',
+		{
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				"username": "zyrex"
+			})
+		});
+
+		payload.then(response => response.json())
+		.then(jsonResponse => {
+			console.log(jsonResponse);
+		}).catch(error => {
+			console.log(error);
 		})
-	});
-
-	payload.then(response => response.json())
-	.then(jsonResponse => {
-		console.log(jsonResponse);
-	}).catch(error => {
-		console.log(error);
-	})
 
 	// let cookies = getCookies(req);
 	// console.log(cookies);
