@@ -93,6 +93,7 @@ const LoginPage = () => {
     <div className="login grid justify-items-center">
       <Head>
         <title>IPB Scholar | Login</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <form

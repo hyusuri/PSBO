@@ -18,6 +18,7 @@ export default function Home({ beasiswas }) {
     <>
       <Head>
         <title>IPB Scholar | Home</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <div>

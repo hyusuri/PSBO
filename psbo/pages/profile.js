@@ -120,6 +120,7 @@ const Profile = ({ user_data, cookies }) => {
     <>
       <Head>
         <title>IPB Scholar | Profile</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <div>
         <h1 className="text-4xl m-10">Profile</h1>

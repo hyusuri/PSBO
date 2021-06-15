@@ -11,6 +11,7 @@ const formSubmit = () => {
     <>
       <Head>
         <title>IPB Scholar | Daftar</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <div>
         <h1 className="text-4xl m-10">Daftar Beasiswa</h1>
