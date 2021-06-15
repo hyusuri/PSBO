@@ -4,12 +4,15 @@ import Button from "@material-tailwind/react/Button";
 import Cookies from "js-cookie";
 import cookie from "cookie";
 import axios from "axios";
+import { data } from "autoprefixer";
 
 const Formulir = () => {
   const [nama, setNama] = useState("");
   const [nim, setNIM] = useState("");
   const [fakultas, setFakultas] = useState("");
   const [departemen, setDepartemen] = useState("");
+  const [ipk, setIPK] = useState(0);
+  const [semester, setSemester] = useState(0);
   const [count, setCount] = useState(0);
 
   let cookies = Cookies.get();
@@ -41,12 +44,17 @@ const Formulir = () => {
         axiosConfig
       )
       .then((res) => {
-        console.log("GET API Nilai", res.data);
+        let lastIndex = res.data.length;
+        // console.log("GET API Nilai", res.data[lastIndex - 1]);
+        let last = res.data[lastIndex - 1];
+        // console.log(last.IPK);
+        setIPK(last.IPK);
       });
 
     axios
       .get("https://api.ipb.ac.id/v1/nilai/Akademik/NilaiSaya", axiosConfig)
       .then((res) => {
+        // let last = res.data.length - 1;
         console.log("GET API Akademik", res.data);
       });
   }, []);
@@ -114,7 +122,8 @@ const Formulir = () => {
             size="regular"
             outline={true}
             placeholder="IPK"
-            required
+            value={ipk}
+            disabled
           />
         </div>
         <div className="input">
