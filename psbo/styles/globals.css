@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap");
 html,
 body {
   padding: 0;
@@ -22,16 +22,16 @@ body {
 }
 
 nav {
-  background: #2A3F54;
+  background: #2a3f54;
   color: white;
   flex: 100%;
-  justify-content:flex-end;
+  justify-content: flex-end;
   display: flex;
-  align-items:center;
+  align-items: center;
   height: 80px;
 }
 
-nav a{
+nav a {
   margin-right: 40px;
 }
 
@@ -42,19 +42,19 @@ nav .logo {
 
 h1 {
   margin: 20px 100px;
-  font-size : 36px;
+  font-size: 36px;
 }
 
 h2 {
-  font-size : 30px;
+  font-size: 30px;
 }
 
 h3 {
-  font-size : 24px; 
+  font-size: 24px;
 }
 
 h4 {
-  font-size : 18px;
+  font-size: 18px;
 }
 
 .detail {
@@ -68,8 +68,8 @@ h4 {
 } */
 
 .detail button {
-  background-color: #1ABB9C;
-  float:right;
+  background-color: #1abb9c;
+  float: right;
   margin-top: 30px;
   margin-left: 50%;
   margin-right: 50%;
@@ -88,29 +88,29 @@ h4 {
 }
 
 .count {
-  margin : 40px;
+  margin: 40px;
   display: flex;
   /* flex-wrap: wrap; */
   /* justify-content:space-between; */
 }
 
-.count h1{
+.count h1 {
   font-size: 50px;
 }
 
 .diterima {
-  flex:1;
+  flex: 1;
   text-align: center;
-  background:#EBE8E8;
-  padding:10px;
+  background: #ebe8e8;
+  padding: 10px;
   width: 100px;
 }
 
 .dilamar {
-  flex-grow:1;
+  flex-grow: 1;
   text-align: center;
-  background:#EBE8E8;
-  padding:10px;
+  background: #ebe8e8;
+  padding: 10px;
   width: 100px;
 }
 
@@ -169,4 +169,15 @@ h4 {
   color: rgb(189, 27, 204);
   font-weight: bold;
   margin-right: 10px;
+}
+
+.login {
+  background-image: url(../public/rektorat.png);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
 }

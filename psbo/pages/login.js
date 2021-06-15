@@ -4,6 +4,7 @@ import Style from "../styles/Home.module.css";
 import Image from "next/image";
 import Input from "@material-tailwind/react/Input";
 import Button from "@material-tailwind/react/Button";
+import { MdLock } from "react-icons/md";
 
 import Card from "@material-tailwind/react/Card";
 import CardHeader from "@material-tailwind/react/CardHeader";
@@ -89,14 +90,14 @@ const LoginPage = () => {
   }, []);
 
   return (
-    <div>
+    <div className="login grid justify-items-center">
       <Head>
         <title>IPB Scholar | Login</title>
       </Head>
 
       <form
         onSubmit={handleSubmit}
-        className="sm:mx-10 md:mx-40 lg:mx-80 mt-20"
+        className="sm:mx-10 md:mx-40 lg:mx-80 mt-32"
       >
         <Card>
           <CardHeader color="lightBlue" size="lg">
@@ -120,7 +121,9 @@ const LoginPage = () => {
                 placeholder="Password"
                 value={password}
                 onChange={handlePassChange}
-              />
+              >
+                {/* <MdLock size="20px"></MdLock> */}
+              </InputIcon>
             </div>
           </CardBody>
           <CardFooter>
