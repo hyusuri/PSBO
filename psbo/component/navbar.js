@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <nav className="font-sans">
       <div className="logo">
-        <Image src="/ipbscholar.png" width={150} height={60} />
+        <Image src="/logo.png" width={170} height={50} />
       </div>
 
       {Cookies.get("token") === null || Cookies.get("token") === undefined ? (

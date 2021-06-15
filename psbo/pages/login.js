@@ -101,7 +101,8 @@ const LoginPage = () => {
       >
         <Card>
           <CardHeader color="lightBlue" size="lg">
-            <H5 color="gray">IPB Scholar</H5>
+            <Image src="/logo_hitam.png" width={170} height={50} />
+            {/* <H5 color="gray">IPB Scholar</H5> */}
           </CardHeader>
 
           <CardBody>

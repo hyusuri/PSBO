@@ -16,13 +16,13 @@ a {
 }
 
 body {
-  background: #f2f2f2;
+  background: white;
   color: #333;
   font-family: "Nunito";
 }
 
 nav {
-  background: #2a3f54;
+  background: #06125c;
   color: white;
   flex: 100%;
   justify-content: flex-end;
@@ -58,7 +58,9 @@ h4 {
 }
 
 .detail {
-  border: 1px solid gray;
+  padding: 2px;
+  background-color: rgb(207, 217, 236);
+  /* border: 1px solid gray; */
   border-radius: 10px;
   margin: 20px 100px;
 }
@@ -88,6 +90,7 @@ h4 {
 }
 
 .count {
+  background-color: white;
   margin: 40px;
   display: flex;
   /* flex-wrap: wrap; */
@@ -101,7 +104,7 @@ h4 {
 .diterima {
   flex: 1;
   text-align: center;
-  background: #ebe8e8;
+  background: #ffffff;
   padding: 10px;
   width: 100px;
 }
@@ -109,18 +112,19 @@ h4 {
 .dilamar {
   flex-grow: 1;
   text-align: center;
-  background: #ebe8e8;
+  background: #ffffff;
   padding: 10px;
   width: 100px;
 }
 
 .input_section {
-  margin: 30px 60px;
+  margin: 20px 60px;
   display: flex;
   flex-direction: column;
   padding: 16px;
   border: 1px solid black;
   border-radius: 10px;
+  background-color: rgb(255, 255, 255);
 }
 
 .input_section > h2 {
@@ -180,4 +184,8 @@ h4 {
   /* background-position: center;
   background-repeat: no-repeat;
   background-size: cover; */
+}
+
+#beasiswa {
+  background-color: rgb(207, 217, 236);
 }

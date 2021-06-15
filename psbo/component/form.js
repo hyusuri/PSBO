@@ -33,7 +33,7 @@ const Formulir = () => {
     axios
       .get("https://api.ipb.ac.id/v1/Orang/Mahasiswa/BiodataSaya", axiosConfig)
       .then((res) => {
-        console.log("GET Orang", res.data);
+        // console.log("GET Orang", res.data);
         const { Nama, NIM, Fakultas, Departemen } = res.data;
         setNama(Nama);
         setNIM(NIM);
@@ -67,21 +67,17 @@ const Formulir = () => {
       .get("https://api.ipb.ac.id/v1/nilai/Akademik/NilaiSaya", axiosConfig)
       .then((res) => {
         // let last = res.data.length - 1;
-        console.log("GET API Akademik", res.data);
+        // console.log("GET API Akademik", res.data);
       });
   }, []);
 
   const handleSubmit = (evt) => {
-    const username = cookies.username
+    const username = cookies.username;
     evt.preventDefault();
-    let counter = count + 1;
-    setCount(counter);
-    console.log("submitCount", counter);
-    Cookies.set("counter", counter);
 
     const search = window.location.search;
     const params = new URLSearchParams(search);
-    const id = params.get('data');
+    const id = params.get("data");
 
     const datapos = {
       username: username,
@@ -94,21 +90,26 @@ const Formulir = () => {
       semester: semester,
       no_rekening: rekening,
       link_ktm: cookies.link_ktm,
-      link_kk: cookies.link_kk
-    }
-    console.log(datapos)
+      link_kk: cookies.link_kk,
+    };
+    console.log(datapos);
     axios
-    .post("http://localhost:3001/beasiswa/daftar",datapos)
-    .then((response)=>{
-      if(response.data.message == "Sudah Terdaftar"){
-        alert("Anda Sudah Terdaftar")
-      } else {
-        router.push("/detail-beasiswa/"+id);
-      }  
-    })
-    .catch((err)=>{
-      console.log(err)
-    })
+      .post("http://localhost:3001/beasiswa/daftar", datapos)
+      .then((response) => {
+        if (response.data.message == "Sudah Terdaftar") {
+          alert("Anda Sudah Terdaftar");
+
+          let counter = count + 1;
+          setCount(counter);
+          console.log("submitCount", counter);
+          Cookies.set("counter", counter);
+        } else {
+          router.push("/detail-beasiswa/" + id);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   return (
