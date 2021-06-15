@@ -39,6 +39,30 @@ export const getServerSideProps = async ({ req, res }) => {
 		console.log("Request api error : ", err.response.status);
 	});
 
+	const userdata = {
+		username: cookies.username
+	}
+	let axiosconf = {
+		headers: {
+			'Content-Type': 'application/json'
+		}
+	}
+
+	//get image
+	await axios
+	.post('http://localhost:3001/lampiran/user', userdata,axiosconf)
+	.then( response => {
+		console.log(response.data.message[0].link_kk)
+		const link_kk = response.data.message[0].link_kk
+		const link_ktm = response.data.message[0].link_ktm
+		cookies.link_kk = link_kk
+		cookies.link_ktm = link_ktm
+	})
+	.catch(err => {
+		console.log(err)
+	})
+
+	//return
 	if (api_call === undefined) {
 		return {
 			props: {  },
@@ -56,31 +80,30 @@ export const getServerSideProps = async ({ req, res }) => {
 				cookies },
 			};
 		}
+
+	
 	};
 
 	const Profile =  ({ user_data, cookies }) => {
+		
 
 		const [image_kk, setImageKK] = useState(null);
 		const [image_ktm, setImageKTM] = useState(null);
 
-		const handleimageKKChange = (evt) => {
-			console.log(evt.target.files[0])
-		};
-		const handleimageKTMChange = (evt) => {
-			console.log(evt.target.files[0])
-		};
 		const handleSubmitkk = async (event) => {
 			event.preventDefault()
 			const datanya = new FormData()
 			datanya.append('username', cookies.username)
 			datanya.append('image-kk', image_kk)
 
-			const res = await fetch('http://localhost:3001/lampiran/upload-kk',{
-				method:"POST",
-				body: datanya
+			await axios
+			.post('http://localhost:3001/lampiran/upload-kk', datanya)
+			.then(response => {
+				console.log(response)
 			})
-			const res2 = await res.json()
-			console.log(res2)
+			.catch(err => {
+				console.log(err.response)
+			})
 		}
 
 		const handleSubmitktm = async (event) => {
@@ -89,32 +112,16 @@ export const getServerSideProps = async ({ req, res }) => {
 			datanya.append('username', cookies.username)
 			datanya.append('image-ktm', image_ktm)
 
-			const res = await fetch('http://localhost:3001/lampiran/upload-ktm',{
-				method:"POST",
-				body: datanya
+			await axios
+			.post('http://localhost:3001/lampiran/upload-ktm', datanya)
+			.then(response => {
+				console.log(response)
 			})
-			const res2 = await res.json()
-			console.log(res2)
+			.catch(err => {
+				console.log(err.response)
+			})
 		}
 
-		const fetch = require('node-fetch')
-		const payload = fetch('http://localhost:3001/lampiran/user',
-		{
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
-				"username": cookies.username
-			})
-		});
-
-		payload.then(response => response.json())
-		.then(jsonResponse => {
-			//console.log(jsonResponse);
-		}).catch(error => {
-			console.log(error);
-		})
 
 		return (
 			<>
@@ -183,6 +190,9 @@ export const getServerSideProps = async ({ req, res }) => {
 	<div className="m-10 space-y-2">
 	<label for="ktm">Kartu Tanda Mahasiswa</label>
 	<div>
+	<a href={"http://localhost:3001/"+cookies.link_ktm} target="_blank">{cookies.link_ktm}</a>
+	</div>
+	<div>
 	<input id="ktm" type="file" onChange={(e)=>setImageKTM(e.target.files[0])}></input>
 	</div>
 	<Button className="mx-20">simpan</Button>
@@ -192,6 +202,9 @@ export const getServerSideProps = async ({ req, res }) => {
 	<form onSubmit={handleSubmitkk} >
 	<div className="m-10 space-y-2">
 	<label className="mr-10" for="kk">Kartu Keluarga</label>
+	<div>
+	<a href={"http://localhost:3001/"+cookies.link_kk} target="_blank">{cookies.link_kk}</a>
+	</div>
 	<div>
 	<input id="kk" type="file" onChange={(e)=>setImageKK(e.target.files[0])}></input>
 	</div>
