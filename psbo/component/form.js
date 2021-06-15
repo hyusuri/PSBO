@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import Input from "@material-tailwind/react/Input";
 import Button from "@material-tailwind/react/Button";
 import Cookies from "js-cookie";
-import cookie from "cookie";
+// import cookie from "cookie";
 import axios from "axios";
 import { data } from "autoprefixer";
 
@@ -44,11 +44,20 @@ const Formulir = () => {
         axiosConfig
       )
       .then((res) => {
+        let data = res.data;
+        for(var i = 0; i < res.data.length; i++){
+          if (data[i].IP === 0.0) {
+            data = data[i];
+            break;
+          }
+        }
+
         let lastIndex = res.data.length;
         // console.log("GET API Nilai", res.data[lastIndex - 1]);
         let last = res.data[lastIndex - 1];
         // console.log(last.IPK);
-        setIPK(last.IPK);
+        setIPK(data.IPK);
+        setSemester(data.SemesterMahasiswa);
       });
 
     axios
@@ -134,6 +143,7 @@ const Formulir = () => {
               size="regular"
               outline={true}
               placeholder="Semester"
+              value={semester}
               required
             />
           </div>
