@@ -46,13 +46,13 @@ Tipe desain yang digunakan adalah Waterfall. Waterfall adalah metode pengembanga
 ![usecase](https://github.com/hyusuri/PSBO/blob/main/img/ucdiag.png)
 
 ### Class Diagram
-![class](https://github.com/hyusuri/PSBO/blob/main/img/psbo-Class%20Diagram.jpg)
+![class](https://github.com/hyusuri/PSBO/blob/main/img/cddiag.png)
 
 ### Activity Diagram
 ![activity](https://github.com/hyusuri/PSBO/blob/main/img/actdiag.png)
 
 ### Entity Relationship Diagram
-![erd](https://github.com/hyusuri/PSBO/blob/main/img/ERD_PSBO.jpg)
+![erd](https://github.com/hyusuri/PSBO/blob/main/img/erdiag.png)
 
 ### Arsitektur Sistem
 ![arsitektur](https://github.com/hyusuri/PSBO/blob/main/img/arsdiag.png)
