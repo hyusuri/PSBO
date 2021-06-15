@@ -1,13 +1,13 @@
 // import { Button } from "@material-ui/core";
 import React from "react";
 import Button from "@material-tailwind/react/Button";
-import Head from "next/head"
-import Image from 'next/image'
+import Head from "next/head";
+import Image from "next/image";
 // import {getCookies} from "../utils/utils"
-import Cookies from 'js-cookie';
-import cookie from "cookie"
-import axios from "axios"
-import { GetServerSideProps } from 'next'
+import Cookies from "js-cookie";
+import cookie from "cookie";
+import axios from "axios";
+import { GetServerSideProps } from "next";
 import { useState } from "react";
 import { data } from "autoprefixer";
 

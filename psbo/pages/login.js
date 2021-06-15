@@ -68,6 +68,8 @@ const LoginPage = () => {
         Cookies.set("username", Username, { sameSite: "strict", expires: 1 });
         setError({ error: "" });
 
+        Cookies.set("counter", 0);
+
         setUser(localStorage.getItem("userAuth"));
 
         localStorage.setItem("userAuth", res.data.Username);

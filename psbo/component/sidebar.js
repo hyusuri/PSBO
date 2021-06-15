@@ -6,7 +6,7 @@ import NavLink from "@material-tailwind/react/NavLink";
 
 // import { Link } from "react-router-dom";
 
-import AdminNavbar from "./AdminNavbar";
+import AdminNavbar from "./adminNavbar";
 import Icon from "@material-tailwind/react/Icon";
 import H6 from "@material-tailwind/react/Heading6";
 import Link from "next/link";

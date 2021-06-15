@@ -1,6 +1,6 @@
 import { Tab } from "@material-ui/icons";
 import Head from "next/head";
-import AdminNavbar from "../../component/AdminNavbar";
+import AdminNavbar from "../../component/adminNavbar";
 import Sidebar from "../../component/sidebar";
 import ScholarCard from "../../component/table";
 
