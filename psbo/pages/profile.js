@@ -50,7 +50,7 @@ export const getServerSideProps = async ({ req, res }) => {
 
 	//get image
 	await axios
-	.post('http://localhost:3001/lampiran/user', userdata,axiosconf)
+	.post('http://34.101.142.194:3001/lampiran/user', userdata,axiosconf)
 	.then( response => {
 		console.log(response.data.message[0].link_kk)
 		const link_kk = response.data.message[0].link_kk
@@ -97,7 +97,7 @@ export const getServerSideProps = async ({ req, res }) => {
 			datanya.append('image-kk', image_kk)
 
 			await axios
-			.post('http://localhost:3001/lampiran/upload-kk', datanya)
+			.post('http://34.101.142.194:3001/lampiran/upload-kk', datanya)
 			.then(response => {
 				console.log(response)
 			})
@@ -113,7 +113,7 @@ export const getServerSideProps = async ({ req, res }) => {
 			datanya.append('image-ktm', image_ktm)
 
 			await axios
-			.post('http://localhost:3001/lampiran/upload-ktm', datanya)
+			.post('http://34.101.142.194:3001/lampiran/upload-ktm', datanya)
 			.then(response => {
 				console.log(response)
 			})
@@ -190,7 +190,7 @@ export const getServerSideProps = async ({ req, res }) => {
 	<div className="m-10 space-y-2">
 	<label for="ktm">Kartu Tanda Mahasiswa</label>
 	<div>
-	<a href={"http://localhost:3001/"+cookies.link_ktm} target="_blank">{cookies.link_ktm}</a>
+	<a href={"http://34.101.142.194:3001/"+cookies.link_ktm} target="_blank">{cookies.link_ktm}</a>
 	</div>
 	<div>
 	<input id="ktm" type="file" onChange={(e)=>setImageKTM(e.target.files[0])}></input>
@@ -203,7 +203,7 @@ export const getServerSideProps = async ({ req, res }) => {
 	<div className="m-10 space-y-2">
 	<label className="mr-10" for="kk">Kartu Keluarga</label>
 	<div>
-	<a href={"http://localhost:3001/"+cookies.link_kk} target="_blank">{cookies.link_kk}</a>
+	<a href={"http://34.101.142.194:3001/"+cookies.link_kk} target="_blank">{cookies.link_kk}</a>
 	</div>
 	<div>
 	<input id="kk" type="file" onChange={(e)=>setImageKK(e.target.files[0])}></input>
