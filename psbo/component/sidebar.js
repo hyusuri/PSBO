@@ -86,7 +86,7 @@ export default function Sidebar() {
                   className="flex items-center gap-4 text-sm font-light py-3"
                   //   active="blue"
                   //   onMouseMove="dark"
-                  activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  // activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
                   <MdDashboard size="24px" />
                   Dashboard

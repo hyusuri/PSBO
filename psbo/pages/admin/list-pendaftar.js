@@ -3,7 +3,6 @@ import Head from "next/head";
 import AdminNavbar from "../../component/adminNavbar";
 import ListPendaftar from "../../component/list";
 import Sidebar from "../../component/sidebar";
-import Tabb from "../../component/tab";
 import PageVisitsCard from "../../component/table";
 
 const Pendaftar = () => {
