@@ -6,8 +6,8 @@ import Cookies from "js-cookie";
 const Navbar = () => {
   const handleLogout = () => {
     Cookies.remove("token");
-    Cookies.remove("name");
-    Cookies.remove("nim");
+    Cookies.remove("username");
+    Cookies.remove("counter");
     // setUser(null);
     localStorage.clear();
 

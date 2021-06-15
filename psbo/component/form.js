@@ -10,6 +10,7 @@ const Formulir = () => {
   const [nim, setNIM] = useState("");
   const [fakultas, setFakultas] = useState("");
   const [departemen, setDepartemen] = useState("");
+  const [count, setCount] = useState(0);
 
   let cookies = Cookies.get();
   // console.log("token", cookies.token);
@@ -46,14 +47,22 @@ const Formulir = () => {
     axios
       .get("https://api.ipb.ac.id/v1/nilai/Akademik/NilaiSaya", axiosConfig)
       .then((res) => {
-        console.log("GET API Akademik", res);
+        console.log("GET API Akademik", res.data);
       });
   }, []);
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    let counter = count + 1;
+    setCount(counter);
+    console.log("submitCount", counter);
+    Cookies.set("counter", counter);
+  };
+
   return (
     <section className="input_section">
-      <h2>Masukkan data</h2>
-      <form id="inputBook">
+      <h2>Formulir Beasiswa</h2>
+      <form id="inputBeasiswa" onSubmit={handleSubmit}>
         <div className="input">
           <Input
             type="text"
