@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 // import cookie from "cookie";
 import axios from "axios";
 import { data } from "autoprefixer";
+import { useRouter } from "next/router";
 
 const Formulir = () => {
   const [nama, setNama] = useState("");
@@ -12,10 +13,12 @@ const Formulir = () => {
   const [fakultas, setFakultas] = useState("");
   const [departemen, setDepartemen] = useState("");
   const [ipk, setIPK] = useState(0);
+  const [rekening, setrekening] = useState(0);
   const [semester, setSemester] = useState(0);
   const [count, setCount] = useState(0);
 
   let cookies = Cookies.get();
+  const router = useRouter();
   // console.log("token", cookies.token);
 
   let axiosConfig = {
@@ -69,11 +72,43 @@ const Formulir = () => {
   }, []);
 
   const handleSubmit = (evt) => {
+    const username = cookies.username
     evt.preventDefault();
     let counter = count + 1;
     setCount(counter);
     console.log("submitCount", counter);
     Cookies.set("counter", counter);
+
+    const search = window.location.search;
+    const params = new URLSearchParams(search);
+    const id = params.get('data');
+
+    const datapos = {
+      username: username,
+      beasiswa_id: id,
+      nama: nama,
+      nim: nim,
+      fakultas: fakultas,
+      departemen: departemen,
+      ipk: ipk,
+      semester: semester,
+      no_rekening: rekening,
+      link_ktm: cookies.link_ktm,
+      link_kk: cookies.link_kk
+    }
+    console.log(datapos)
+    axios
+    .post("http://localhost:3001/beasiswa/daftar",datapos)
+    .then((response)=>{
+      if(response.data.message == "Sudah Terdaftar"){
+        alert("Anda Sudah Terdaftar")
+      } else {
+        router.push("/detail-beasiswa/"+id);
+      }  
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
   };
 
   return (
@@ -152,6 +187,7 @@ const Formulir = () => {
               type="number"
               color="lightBlue"
               size="regular"
+              onChange={(e) => setrekening(e.target.value)}
               outline={true}
               placeholder="Nomor Rekening"
               required

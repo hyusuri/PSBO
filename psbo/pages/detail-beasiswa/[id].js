@@ -47,7 +47,7 @@ const Details = ({ beasiswa }) => {
             <p className="font-sans text-base m-5">{ beasiswa.email }</p>
             <p className="font-sans text-base m-5">{ beasiswa.body }</p>
         </div>
-        <Button className="daftar"><Link href='/form'>Daftar</Link></Button>
+        <Button className="daftar"><Link href={{pathname:'/form', query:{data: JSON.stringify(beasiswa.id)}}} >Daftar</Link></Button>
         {/* <Button href="/form" className="daftar"
             color="teal"
             buttonType="filled"
