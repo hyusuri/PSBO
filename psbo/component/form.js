@@ -45,7 +45,7 @@ const Formulir = () => {
       )
       .then((res) => {
         let data = res.data;
-        for(var i = 0; i < res.data.length; i++){
+        for (var i = 0; i < res.data.length; i++) {
           if (data[i].IP === 0.0) {
             data = data[i];
             break;
@@ -144,7 +144,7 @@ const Formulir = () => {
               outline={true}
               placeholder="Semester"
               value={semester}
-              required
+              disabled
             />
           </div>
           <div className="input">

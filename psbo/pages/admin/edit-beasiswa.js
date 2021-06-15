@@ -37,7 +37,7 @@ const Detailss = () => {
 
         <div className="flex justify-evenly">
           <Button className="edit">
-            <Link href="">Ubah</Link>
+            <Link href="/admin">Ubah</Link>
           </Button>
         </div>
 
@@ -45,7 +45,7 @@ const Detailss = () => {
 
         <div className="flex justify-evenly">
           <Button className="edit">
-            <Link href="">Ubah</Link>
+            <Link href="/admin">Ubah</Link>
           </Button>
         </div>
       </div>

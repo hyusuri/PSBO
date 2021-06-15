@@ -1,5 +1,4 @@
 import Head from "next/head";
-import AdminNavbar from "../../component/adminNavbar";
 import Formulir from "../../component/form";
 import Sidebar from "../../component/sidebar";
 
@@ -10,7 +9,6 @@ const AddBeasiswa = () => {
         <title>IPB Scholar | Admin</title>
       </Head>
 
-      {/* <AdminNavbar></AdminNavbar> */}
       <Sidebar></Sidebar>
 
       <div className="ml-80 ">

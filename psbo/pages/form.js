@@ -1,4 +1,3 @@
-// import { Button } from "@material-ui/core";
 import Head from "next/head";
 import Style from "../styles/Home.module.css";
 import Image from "next/image";
