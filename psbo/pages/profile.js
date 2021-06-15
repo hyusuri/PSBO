@@ -9,6 +9,7 @@ import cookie from "cookie"
 import axios from "axios"
 import { GetServerSideProps } from 'next'
 import { useState } from "react";
+import { data } from "autoprefixer";
 
 export const getServerSideProps = async ({ req, res }) => {
 	if (req.headers.cookie === undefined) {
@@ -64,42 +65,38 @@ export const getServerSideProps = async ({ req, res }) => {
 
 		const handleimageKKChange = (evt) => {
 			console.log(evt.target.files[0])
-			
 		};
 		const handleimageKTMChange = (evt) => {
 			console.log(evt.target.files[0])
 		};
-		const handleSubmit = async (event) => {
-			event.prefentDefault();
-			const datapost = {
-				'image-kk': image_kk,
-				'image-ktm': image_ktm
-			}
+		const handleSubmitkk = async (event) => {
+			event.preventDefault()
+			const datanya = new FormData()
+			datanya.append('username', cookies.username)
+			datanya.append('image-kk', image_kk)
 
-			const axiosConfig = {
-				headers: {
-					"Content-Type": "multipart/form-data",
-				},
-			};
-
-			const api_call = await axios
-			.post(
-				"http://localhost:3001/lampiran/upload-kk",
-				datapost,
-				axiosConfig
-				)
-			.post(
-				"http://localhost:3001/lampiran/upload-ktm",
-				datapost,
-				axiosConfig
-				)
-			.then((res) => {
-				console.log(res)
+			const res = await fetch('http://localhost:3001/lampiran/upload-kk',{
+				method:"POST",
+				body: datanya
 			})
-			.catch((err) => {
-				console.log(err)
-			})
+			const res2 = await res.json()
+			console.log(res2)
 		}
+
+		const handleSubmitktm = async (event) => {
+			event.preventDefault()
+			const datanya = new FormData()
+			datanya.append('username', cookies.username)
+			datanya.append('image-ktm', image_ktm)
+
+			const res = await fetch('http://localhost:3001/lampiran/upload-ktm',{
+				method:"POST",
+				body: datanya
+			})
+			const res2 = await res.json()
+			console.log(res2)
+		}
+
 		const fetch = require('node-fetch')
 		const payload = fetch('http://localhost:3001/lampiran/user',
 		{
@@ -179,27 +176,29 @@ export const getServerSideProps = async ({ req, res }) => {
 
 	<h2 className="text-3xl m-10">Berkas Tambahan</h2>
 	
-	<form onSubmit={handleSubmit} >
 
 	<div className="text-center m-8 md:flex rounded-xl p-8 md:p-0 gap-x-16 justify-center">
+
+	<form onSubmit={handleSubmitktm} >
 	<div className="m-10 space-y-2">
 	<label for="ktm">Kartu Tanda Mahasiswa</label>
 	<div>
-	<input id="ktm" value={image_ktm} type="file" onChange={handleimageKTMChange}></input>
+	<input id="ktm" type="file" onChange={(e)=>setImageKTM(e.target.files[0])}></input>
 	</div>
 	<Button className="mx-20">simpan</Button>
 	</div>
-
+	</form>
+	
+	<form onSubmit={handleSubmitkk} >
 	<div className="m-10 space-y-2">
 	<label className="mr-10" for="kk">Kartu Keluarga</label>
 	<div>
-	<input id="kk" value={image_kk} type="file" onChange={handleimageKKChange}></input>
+	<input id="kk" type="file" onChange={(e)=>setImageKK(e.target.files[0])}></input>
 	</div>
 	<Button className="mx-20">simpan</Button>
 	</div>
-	</div>
-
 	</form>
+	</div>
 
 
 
