@@ -16,30 +16,37 @@ Dalam web tersebut, mahasiswa dapat login menggunakan akun IPB. Setelah login, m
 2. Sebagai Mahasiswa, Saya ingin mendapatkan informasi pembukaan beasiswa yang sesuai dan dapat Saya daftar (contoh beasiswa khusus fakultas/departemen tertentu), sehingga Saya lebih mudah mendapatkan informasi beasiswa yang dapat didaftar dan menentukan beasiswa yang sesuai
 
 ## Spesifikasi teknis lingkungan pengembangan
-### Software :
+### Software
 - `Visual Studio Code`
 - `Postman`
 - `Figma`
 - `Github`
 
-### Hardware :
+### Hardware
 - CPU i7-7700HQ
 - RAM 8GB
 - ROM 1TB 
 - GPU NVIDIA Geforce GTX 1050 
 
-### Tech Stack :
+### Tech Stack
 - `Next JS`
 - `Node JS`
 - `MySQL`
 
 ## Konsep OOP yang Digunakan
-Konsep OOP yang digunakan yaitu Enkapsulasi. Enkapsulasi adalah ...
-
+- **Abstraction**. Abstraksi adalah konsep yang menyembunyikan atau mengabaikan perincian dari implementasi suatu fungsi. Dalam penerapannya yaitu ketika suatu fungsi dipanggil tidak perlu diketahui detail dari fungsi tersebut, sehingga pengguna dari fungsi tersebut lebih fokus ke output yang dihasilkan dari fungsi. 
+- **Class dan Object**. Class merupakan pola atau cetakan dari suatu Object yang memiliki Method atau Behavior. Method atau Behavior adalah perilaku (fungsi) yang dapat dilakukan oleh suatu class.  Object merupakan entitas paling dasar dari OOP yang menggambarkan objek nyata. Object juga memiliki Method sesuai dengan Classnya. 
+- **Encapsulation**. Enkapsulasi adalah konsep penggabungan antara data dan fungsi menjadi satu bagian (class) serta memberikan akses terbatas bagi entitas atau fungsi di luar bagian (class) tersebut.
+- **Inheritance**. Pewarisan adalah konsep untuk membentuk class baru dengan penurunan bagian atau dan perilaku dari class yang sudah ada. Kegunaan dari konsep ini adalah untuk membuat kelas yang lebih spesifik. 
 
 ## Tipe Desain Pengembangan yang Digunakan
-Tipe desain yang digunakan adalah Waterfall. Waterfall adalah metode pengembangan ...
-
+![tipe desain](https://github.com/hyusuri/PSBO/blob/main/img/tipedes.png)
+Tipe desain yang digunakan adalah Waterfall. Waterfall adalah metode pengembangan perangkat lunak dengan konsep yang paling klasik. Metode ini dilakukan dengan konsep menyelesaikan tahap yang sedang dilakukan sebelum beralih ke tahap berikutnya. Secara sederhana, seluruh tahap dilakukan secara berurutan dari tahap awal (Requirement Analysis) hingga tahap terakhir (Operation & Maintenance). Berikut adalah tahapan lengkapnya :
+1. **Requirement Analysis**, pada tahap ini dilakukan dengan pencarian informasi mengenai kebutuhan dari sistem yang akan dirancang. Tujuan dari tahap ini adalah untuk mendefinisikan alur sistem sesuai dengan masalah yang akan diselesaikan melalui sistem tersebut. Tahap ini dilakukan dengan cara berdiskusi dan mencari literatur/informasi terkait sistem yang akan dirancang. Hasil dari tahap ini berupa analisis (User Story) yang akan digunakan pada tahap selanjutnya (Design). 
+2. **Design**, tahap ini merupakan lanjutan dari pengolahan analisis pada tahap Requirement Analysis menjadi rancangan sistem yang lebih spesifik dan detil. Pada tahap ini didefinisikan Use Case Diagram, Activity Diagram, Class Diagram, ER Diagram, Arsitektur Sistem dan Desain UI. Selain itu, kebutuhan perangkat lunak dan keras yang diperlukan untuk membangun sistem juga ditentukan di tahap ini.
+3. **Implementation**, tahap ini adalah proses implementasi dari desain yang sudah dibuat menjadi sebuah sistem. Proses yang dilakukan adalah penulisan kode (fungsi, modul, dll) dan pengujian pada level unit atau per bagian tertentu.
+4. **Integration & Testing**, setelah implementasi pada tiap unit atau bagian sudah dilakukan tahap selanjutnya adalah menggabungkan dan menghubungkan seluruh bagian menjadi satu sistem. Sealin itu, dilakukan juga pengecekan dan pengujian pada keseluruhan sistem untuk memastikan seluruh bagiannya dapat berjalan dengan baik.
+5. **Operation & Maintenance**, tahap terakhir dalam pengembangan sistem adalah dengan menjalankan sistem tersebut ke pengguna secara langsung. Dalam prosesnya, dilakukan juga pemeliharaan dan perbaikan sistem yang mungkin mengalami error yang sebelumnya belum ditemukan untuk tetap menjaga kinerja dari sistem.
 
 ## Hasil dan Pembahasan
 ### Use Case Diagram
