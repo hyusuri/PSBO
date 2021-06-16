@@ -122,9 +122,12 @@ h4 {
   display: flex;
   flex-direction: column;
   padding: 16px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
+  box-shadow: 1px 0px 17px 2px rgba(0, 0, 0, 0.55);
+  -webkit-box-shadow: 1px 0px 17px 2px rgba(0, 0, 0, 0.55);
+  -moz-box-shadow: 1px 0px 17px 2px rgba(0, 0, 0, 0.55);
 }
 
 .input_section > h2 {

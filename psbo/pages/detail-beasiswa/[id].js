@@ -5,7 +5,7 @@ import Link from "next/link";
 import Head from "next/dist/next-server/lib/head";
 
 export const getStaticPaths = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/comments");
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await res.json();
 
   const paths = data.map((beasiswa) => {
@@ -22,9 +22,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
   const id = context.params.id;
-  const res = await fetch(
-    "https://jsonplaceholder.typicode.com/comments/" + id
-  );
+  const res = await fetch("https://jsonplaceholder.typicode.com/users/" + id);
   const data = await res.json();
   console.log(res);
   return {
@@ -45,14 +43,14 @@ const Details = ({ beasiswa }) => {
       <div className="detail">
         <h3 className="font-sans text-2xl m-5">{beasiswa.name}</h3>
         <p className="font-sans text-base m-5">{beasiswa.email}</p>
-        <p className="font-sans text-base m-5">{beasiswa.body}</p>
+        <p className="font-sans text-base m-5">{beasiswa.phone}</p>
       </div>
 
       <h1 className="font-sans text-3xl m-10">Persyaratan Beasiswa</h1>
       <div className="detail">
         <h3 className="font-sans text-2xl m-5">{beasiswa.name}</h3>
         <p className="font-sans text-base m-5">{beasiswa.email}</p>
-        <p className="font-sans text-base m-5">{beasiswa.body}</p>
+        <p className="font-sans text-base m-5">{beasiswa.phone}</p>
       </div>
       <Button className="daftar">
         <Link

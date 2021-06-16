@@ -5,7 +5,7 @@ import Style from "../styles/Home.module.css";
 import Link from "next/link";
 
 export const getStaticProps = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/comments");
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
   const data = await res.json();
 
   return {
@@ -29,7 +29,7 @@ export default function Home({ beasiswas }) {
           <Link href={"detail-beasiswa/" + beasiswa.id} key={beasiswa.id}>
             <a id="beasiswa" className={Style.single}>
               <h3 className="font-sans text-2xl m-5">{beasiswa.name}</h3>
-              <p className="font-sans text-base m-5">{beasiswa.body}</p>
+              <p className="font-sans text-base m-5">{beasiswa.website}</p>
             </a>
           </Link>
         ))}
