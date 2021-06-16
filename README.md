@@ -2,7 +2,7 @@
 # <div align="center"> **IPB Scholar** </div>
 ## <div align="center"> (P1 | Kelompok 6) </div>
 
-[Deskripsi](#deskripsi-singkat-aplikasi) | [User Analysis](#user-story) | [Lingkungan Pengembangan](#spesifikasi-teknis-lingkungan-pengembangan) | [Konsep OOP](#konsep-oop-yang-digunakan) | [Tipe Desain Pengembangan](#tipe-desain-pengembangan-yang-digunakan) | [Hasil & Pembahasan](#hasil-dan-pembahasan) | [Hasil Implementasi](#hasil-implementasi) | [Saran](#saran) | [Developer & Job Desc](#developer-&-job-desc) | [Link](#link) |
+[Deskripsi](#deskripsi-singkat-aplikasi) | [User Analysis](#user-story) | [Lingkungan Pengembangan](#spesifikasi-teknis-lingkungan-pengembangan) | [Konsep OOP](#konsep-oop-yang-digunakan) | [Tipe Desain Pengembangan](#tipe-desain-pengembangan-yang-digunakan) | [Hasil & Pembahasan](#hasil-dan-pembahasan) | [Hasil Implementasi](#hasil-implementasi) | [Saran](#saran) | [Developer & Job Desc](#developer-dan-job-desc) | [Link](#link) |
 :---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:
 
 ## Deskripsi Singkat Aplikasi
@@ -13,7 +13,8 @@ Dalam web tersebut, mahasiswa dapat login menggunakan akun IPB. Setelah login, m
 
 ## User Story
 1. Sebagai Mahasiswa, Saya ingin mendaftar atau mengajukan beasiswa dengan lebih mudah, sehingga Saya tidak perlu repot - repot mengisi formulir terkait data diri yang sudah ada di database IPB dan hanya perlu mengunggah berkas tambahan
-2. Sebagai Mahasiswa, Saya ingin mendapatkan informasi pembukaan beasiswa yang sesuai dan dapat Saya daftar (contoh beasiswa khusus fakultas/departemen tertentu), sehingga Saya lebih mudah mendapatkan informasi beasiswa yang dapat didaftar dan menentukan beasiswa yang sesuai
+2. Sebagai Mahasiswa, Saya ingin menyimpan berkas tambahan terkait Beasiswa dalam sistem, sehingga Saya lebih mudah menambahkan berkas tersebut ketika mendaftar Beasiswa
+3. Sebagai Mahasiswa, Saya ingin mendapatkan informasi pembukaan beasiswa yang sesuai dan dapat Saya daftar (contoh beasiswa khusus fakultas/departemen tertentu), sehingga Saya lebih mudah mendapatkan informasi beasiswa yang dapat didaftar dan menentukan beasiswa yang sesuai
 
 ## Spesifikasi teknis lingkungan pengembangan
 ### Software
@@ -35,8 +36,8 @@ Dalam web tersebut, mahasiswa dapat login menggunakan akun IPB. Setelah login, m
 
 ## Konsep OOP yang Digunakan
 - **Abstraction**. Abstraksi adalah konsep yang menyembunyikan atau mengabaikan perincian dari implementasi suatu fungsi. Dalam penerapannya yaitu ketika suatu fungsi dipanggil tidak perlu diketahui detail dari fungsi tersebut, sehingga pengguna dari fungsi tersebut lebih fokus ke output yang dihasilkan dari fungsi. 
-- **Class dan Object**. Class merupakan pola atau cetakan dari suatu Object yang memiliki Method atau Behavior. Method atau Behavior adalah perilaku (fungsi) yang dapat dilakukan oleh suatu class.  Object merupakan entitas paling dasar dari OOP yang menggambarkan objek nyata. Object juga memiliki Method sesuai dengan Classnya. 
 - **Encapsulation**. Enkapsulasi adalah konsep penggabungan antara data dan fungsi menjadi satu bagian (class) serta memberikan akses terbatas bagi entitas atau fungsi di luar bagian (class) tersebut.
+- **Class dan Object**. Class merupakan pola atau cetakan dari suatu Object yang memiliki Method atau Behavior. Method atau Behavior adalah perilaku (fungsi) yang dapat dilakukan oleh suatu class.  Object merupakan entitas paling dasar dari OOP yang menggambarkan objek nyata. Object juga memiliki Method sesuai dengan Classnya. 
 - **Inheritance**. Pewarisan adalah konsep untuk membentuk class baru dengan penurunan bagian atau dan perilaku dari class yang sudah ada. Kegunaan dari konsep ini adalah untuk membuat kelas yang lebih spesifik. 
 
 ## Tipe Desain Pengembangan yang Digunakan
@@ -78,10 +79,20 @@ Tipe desain yang digunakan adalah Waterfall. Waterfall adalah metode pengembanga
 - Update
     - Mahasiswa dapat mengubah berkas tambahan terkait Beasiswa yang sudah pernah ditambahkan
 - Delete
-    - 
+    -   
 
 ## Hasil implementasi
 ### Screenshot Sistem
+#### Login
+![login](https://github.com/hyusuri/PSBO/blob/main/img/login.png)
+#### Beranda
+![home](https://github.com/hyusuri/PSBO/blob/main/img/home.png)
+#### Profil
+![profil](https://github.com/hyusuri/PSBO/blob/main/img/Profile.png)
+#### Detil Beasiswa
+![detail beasiswa](https://github.com/hyusuri/PSBO/blob/main/img/detail_beasiswa.png)
+#### Form Beasiswa
+![formulir_beasiswa](https://github.com/hyusuri/PSBO/blob/main/img/formulir_beasiswa.png)
 
 ## Saran
 Saran untuk pengembangan sistem selanjutnya, antara lain :
@@ -89,14 +100,14 @@ Saran untuk pengembangan sistem selanjutnya, antara lain :
 - Dapat ditambahkan fungsi sorting Beasiswa otomatis agar dapat menampilkan Beasiswa sesuai data Mahasiswa
 - Dapat ditambahkan fungsi pencarian (search box) untuk memudahkan pencarian beasiswa pada halaman beranda
 
-## Developer & Job Desc
+## Developer dan Job Desc
 |NIM|Nama|Role|
 |---|---|---|
-|G64180007|Arya Aminata|...|
-|G64180036|Hafizh Yusuf Buchori|...|
-|G64180064|Muhammad Rayhan Adyatma|...|
-|G64180075|Pradhipta Trimanggala Satya|...|
-|G64180084|Faiz Muhammad 'Alauddin|...|
+|G64180007|Arya Aminata|Analyst & Project Manager|
+|G64180036|Hafizh Yusuf Buchori|Frontend & Backend Developer|
+|G64180064|Muhammad Rayhan Adyatma|UI Designer|
+|G64180075|Pradhipta Trimanggala Satya|Backend Developer|
+|G64180084|Faiz Muhammad 'Alauddin|Frontend Developer|
 
 ## Link
 -  Figma : [PSBO Kelompok 6 P1 | Figma](https://www.figma.com/file/dKVKrEMTA4gxcKf6wE9IwI/PSBO-Kelompok-6-P1?node-id=0%3A1)
