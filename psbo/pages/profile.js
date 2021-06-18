@@ -8,9 +8,14 @@ import Image from "next/image";
 import cookie from "cookie";
 import axios from "axios";
 import { GetServerSideProps } from "next";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { data } from "autoprefixer";
 import Cookies from "js-cookie";
+import Document from "next/document";
+import { useForm, Controller } from "react-hook-form";
+
+import ReactDOM from "react-dom";
+import Input from "@material-tailwind/react/Input";
 
 export const getServerSideProps = async ({ req, res }) => {
   if (req.headers.cookie === undefined) {
@@ -83,6 +88,14 @@ export const getServerSideProps = async ({ req, res }) => {
 const Profile = ({ user_data, cookies }) => {
   const [image_kk, setImageKK] = useState(null);
   const [image_ktm, setImageKTM] = useState(null);
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    // Update document title using the browser API
+
+    var btn = document.createElement("BUTTON");
+    document.body.appendChild(btn);
+  });
 
   const handleSubmitkk = async (event) => {
     event.preventDefault();
@@ -114,6 +127,23 @@ const Profile = ({ user_data, cookies }) => {
       .catch((err) => {
         console.log(err.response);
       });
+  };
+
+  // useEffect(function updateTitle() {
+  //   document.title = `You clicked ${count} times`;
+  // });
+  const handleTambahBerkas = () => {
+    const element = <h1 className="greeting">Halo, Dunia!</h1>;
+    const coba = document.createElement("div");
+    coba.innerHTML = "TES";
+
+    var btn = document.createElement("BUTTON");
+    document.body.appendChild(btn);
+
+    const menu = document.getElementsByClassName("tes");
+
+    // menu.append(coba);
+    console.log("tes");
   };
 
   return (
@@ -213,6 +243,38 @@ const Profile = ({ user_data, cookies }) => {
             </div>
           </form>
         </div>
+      </div>
+
+      {/* <div className="tambah_berkas flex justify-center">
+        <Button className="flex justify-center" onClick={handleTambahBerkas}>
+          Tambah Berkas
+        </Button>
+        <p className="tes"> You clicked {count} times </p>
+      </div> */}
+
+      <div className="grid justify-items-center">
+        <section className="input_section">
+          <h2>Tambah Berkas Baru</h2>
+          <form id="inputBeasiswa">
+            <div className="input">
+              <Input
+                type="text"
+                color="lightBlue"
+                size="regular"
+                outline={true}
+                placeholder="Nama Berkas"
+                value=""
+                required
+              />
+            </div>
+            <div className="space-y-8">
+              <input id="" type="file"></input>
+            </div>
+            <Button className=" " type="submit">
+              Tambah
+            </Button>
+          </form>
+        </section>
       </div>
     </>
   );

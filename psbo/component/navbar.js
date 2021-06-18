@@ -11,19 +11,19 @@ const Navbar = () => {
     // setUser(null);
     localStorage.clear();
 
-    return (
-      <>
-        <Link className="font-sans" href="/home">
-          <a>Home</a>
-        </Link>
-        <Link className="font-sans" href="/profile">
-          <a>Profile</a>
-        </Link>
-        <Link className="font-sans" href="/login">
-          <a onClick={handleLogout}>Logout</a>
-        </Link>
-      </>
-    );
+    // return (
+    //   <>
+    //     <Link className="font-sans" href="/home">
+    //       <a>Home</a>
+    //     </Link>
+    //     <Link className="font-sans" href="/profile">
+    //       <a>Profile</a>
+    //     </Link>
+    //     <Link className="font-sans" href="/login">
+    //       <a onClick={handleLogout}>Logout</a>
+    //     </Link>
+    //   </>
+    // );
   };
 
   return (
@@ -34,9 +34,9 @@ const Navbar = () => {
 
       {Cookies.get("token") === null || Cookies.get("token") === undefined ? (
         <>
-          <Link className="font-sans" href="/login">
+          {/* <Link className="font-sans" href="/login">
             <a>Login</a>
-          </Link>
+          </Link> */}
         </>
       ) : (
         <>

@@ -65,8 +65,8 @@ const LoginPage = () => {
       .then((res) => {
         console.log("Login Success", res.data);
         const { Token, Username } = res.data;
-        Cookies.set("token", Token, { sameSite: "strict", expires: 1 });
-        Cookies.set("username", Username, { sameSite: "strict", expires: 1 });
+        Cookies.set("token", Token);
+        Cookies.set("username", Username);
         setError({ error: "" });
 
         Cookies.set("counter", 0);
@@ -84,10 +84,10 @@ const LoginPage = () => {
       });
   };
 
-  useEffect(() => {
-    // Prefetch the dashboard page
-    router.prefetch("/home");
-  }, []);
+  // useEffect(() => {
+  //   // Prefetch the dashboard page
+  //   router.prefetch("/home");
+  // }, []);
 
   return (
     <div className="login grid justify-items-center">
@@ -98,9 +98,9 @@ const LoginPage = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="sm:mx-10 md:mx-40 lg:mx-80 mt-32"
+        className="Card_login sm:mx-10 md:mx-40 lg:mx-80 mt-32"
       >
-        <Card>
+        <Card className="Card_login">
           <CardHeader color="lightBlue" size="lg">
             <Image src="/logo_hitam.png" width={170} height={50} />
             {/* <H5 color="gray">IPB Scholar</H5> */}

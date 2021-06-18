@@ -17,15 +17,15 @@ const Formulir = () => {
   const [semester, setSemester] = useState(0);
   const [count, setCount] = useState(0);
 
-  let cookies = Cookies.get();
-  const router = useRouter();
-  // console.log("token", cookies.token);
+  // let cookies = Cookies.get();
+  // const router = useRouter();
+  // // console.log("token", cookies.token);
 
   let axiosConfig = {
     headers: {
       "X-IPBAPI-TOKEN": "Bearer 1f70343f-5478-38da-8aa7-47d662d2078a",
       "Content-Type": "application/json",
-      Authorization: "Bearer " + cookies.token,
+      Authorization: "Bearer " + Cookies.get("token"),
     },
   };
 
@@ -142,7 +142,7 @@ const Formulir = () => {
           <div className="input">
             <Input
               type="text"
-              color="lightBlue"
+              color="gray"
               size="regular"
               outline={true}
               placeholder="Fakultas"
