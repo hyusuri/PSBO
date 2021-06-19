@@ -1,6 +1,5 @@
 import { Tab } from "@material-ui/icons";
 import Head from "next/head";
-import AdminNavbar from "../../component/adminNavbar";
 import ListPendaftar from "../../component/list";
 import Sidebar from "../../component/sidebar";
 import PageVisitsCard from "../../component/table";
@@ -10,6 +9,7 @@ const Pendaftar = () => {
     <div>
       <Head>
         <title>IPB Scholar | Admin</title>
+        <link rel="icon" href="./favicon.png" />
       </Head>
 
       <Sidebar></Sidebar>

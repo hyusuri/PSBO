@@ -61,7 +61,7 @@ export default function ListPendaftar() {
                     size="lg"
                     style={{ padding: 8 }}
                   >
-                    <Link href="/admin/edit-beasiswa">Detail</Link>
+                    <Link href="/admin/detail-pendaftar">Detail</Link>
                   </Button>
                 </td>
               </tr>
@@ -88,7 +88,7 @@ export default function ListPendaftar() {
                     size="lg"
                     style={{ padding: 8 }}
                   >
-                    <Link href="/admin/edit-beasiswa">Detail</Link>
+                    <Link href="/admin/detail-pendaftar">Detail</Link>
                   </Button>
                 </td>
               </tr>
@@ -116,7 +116,7 @@ export default function ListPendaftar() {
                     size="lg"
                     style={{ padding: 8 }}
                   >
-                    <Link href="/admin/edit-beasiswa">Detail</Link>
+                    <Link href="/admin/detail-pendaftar">Detail</Link>
                   </Button>
                 </td>
               </tr>
@@ -143,7 +143,7 @@ export default function ListPendaftar() {
                     size="lg"
                     style={{ padding: 8 }}
                   >
-                    <Link href="/admin/edit-beasiswa">Detail</Link>
+                    <Link href="/admin/detail-pendaftar">Detail</Link>
                   </Button>
                 </td>
               </tr>

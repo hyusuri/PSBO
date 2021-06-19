@@ -1,81 +1,67 @@
-import { useLocation } from "react-router-dom";
-import Button from "@material-tailwind/react/Button";
-import Icon from "@material-tailwind/react/Icon";
-import NavbarInput from "@material-tailwind/react/NavbarInput";
-import Image from "@material-tailwind/react/Image";
-import Dropdown from "@material-tailwind/react/Dropdown";
-import DropdownItem from "@material-tailwind/react/DropdownItem";
-// import ProfilePicture from "../public/profil.png";
+import Link from "next/link";
+import Image from "next/image";
+import { useContext } from "react";
+import Cookies from "js-cookie";
 
-export default function AdminNavbar({ showSidebar, setShowSidebar }) {
-  //   const location = useLocation().pathname;
+const AdminNavbar = () => {
+  const handleLogout = () => {
+    Cookies.remove("token");
+    Cookies.remove("username");
+    Cookies.remove("counter");
+    Cookies.remove("role");
+    // setUser(null);
+    localStorage.clear();
+
+    // return (
+    //   <>
+    //     <Link className="font-sans" href="/home">
+    //       <a>Home</a>
+    //     </Link>
+    //     <Link className="font-sans" href="/profile">
+    //       <a>Profile</a>
+    //     </Link>
+    //     <Link className="font-sans" href="/login">
+    //       <a onClick={handleLogout}>Logout</a>
+    //     </Link>
+    //   </>
+    // );
+  };
 
   return (
-    <nav className="bg-light-blue-500 md:ml-64 py-6 px-3">
-      <div className="container max-w-full mx-auto flex items-center justify-between md:pr-8 md:pl-10">
-        <div className="md:hidden">
-          <Button
-            color="transparent"
-            buttonType="link"
-            size="lg"
-            iconOnly
-            rounded
-            ripple="light"
-            onClick={() => setShowSidebar("left-0")}
-          >
-            <Icon name="menu" size="2xl" color="white" />
-          </Button>
-          <div
-            className={`absolute top-2 md:hidden ${
-              showSidebar === "left-0" ? "left-64" : "-left-64"
-            } z-50 transition-all duration-300`}
-          >
-            <Button
-              color="transparent"
-              buttonType="link"
-              size="lg"
-              iconOnly
-              rounded
-              ripple="light"
-              onClick={() => setShowSidebar("-left-64")}
-            >
-              <Icon name="close" size="2xl" color="white" />
-            </Button>
-          </div>
-        </div>
-
-        <div className="flex justify-between items-center w-full">
-          <h4 className="uppercase text-white text-sm tracking-wider mt-1">
-            {/* {location === "/"
-              ? "DASHBOARD"
-              : location.toUpperCase().replace("/", "")} */}
-          </h4>
-
-          <div className="flex">
-            <NavbarInput placeholder="Search" />
-
-            <div className="-mr-4 ml-6">
-              <Dropdown
-                color="transparent"
-                buttonText={
-                  <div className="w-12">
-                    <Image src="./public/profil.png" rounded />
-                  </div>
-                }
-                rounded
-                style={{
-                  padding: 0,
-                  color: "transparent",
-                }}
-              >
-                <DropdownItem color="lightBlue">Action</DropdownItem>
-                <DropdownItem color="lightBlue">Another Action</DropdownItem>
-                <DropdownItem color="lightBlue">Something Else</DropdownItem>
-              </Dropdown>
-            </div>
-          </div>
-        </div>
+    <nav className="font-sans">
+      <div className="logo">
+        <Image src="/logo.png" width={170} height={50} />
       </div>
+
+      {Cookies.get("token") === null || Cookies.get("token") === undefined ? (
+        <>
+          {/* <Link className="font-sans" href="/login">
+            <a>Login</a>
+          </Link> */}
+        </>
+      ) : Cookies.get("role" === "admin") ? (
+        <>
+          <Link className="font-sans" href="/login">
+            <a onClick={handleLogout}>Logout</a>
+          </Link>
+        </>
+      ) : (
+        (<></>)(
+          <>
+            <Link className="font-sans" href="/home">
+              <a>Home</a>
+            </Link>
+            <Link className="font-sans" href="/profile">
+              <a>Profile</a>
+            </Link>
+            <Link className="font-sans" href="/login">
+              <a onClick={handleLogout}>Logout</a>
+            </Link>
+          </>
+        )
+      )}
     </nav>
   );
-}
+};
+
+export default AdminNavbar;

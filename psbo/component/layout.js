@@ -1,20 +1,37 @@
 import Cookies from "js-cookie";
+import AdminNavbar from "./adminNavbar";
 import Navbar from "./navbar";
-import PrimarySearchAppBar from "./navCob";
 
 const Layout = ({ children }) => {
-  return (
-    <div className="content">
-      {Cookies.get("token") === null || Cookies.get("token") === undefined ? (
-        <></>
-      ) : (
-        <>
-          <Navbar />
-        </>
-      )}
-      {children}
-    </div>
-  );
+  if (Cookies.get("role") === "admin") {
+    return (
+      <>
+        {Cookies.get("token") === null || Cookies.get("token") === undefined ? (
+          <></>
+        ) : (
+          <>
+            <AdminNavbar />
+          </>
+        )}
+
+        {children}
+      </>
+    );
+  } else {
+    return (
+      <>
+        {Cookies.get("token") === null || Cookies.get("token") === undefined ? (
+          <></>
+        ) : (
+          <>
+            <Navbar />
+          </>
+        )}
+
+        {children}
+      </>
+    );
+  }
 };
 
 export default Layout;

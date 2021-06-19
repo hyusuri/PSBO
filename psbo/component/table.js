@@ -17,131 +17,108 @@ export default function ScholarCard() {
           <table className="items-center w-full bg-amber border-collapse">
             <thead>
               <tr>
-                <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
+                <th className="text-center px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                   No
                 </th>
-                <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
+                <th className="text-center px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
                   Nama Beasiswa
                 </th>
-                <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                  Edit
-                </th>
-                <th className="px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
-                  Detail
+                <th className="text-center px-2 text-teal-500 align-middle border-b border-solid border-gray-200 py-3 text-sm whitespace-nowrap font-light text-left">
+                  Aksi
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                <th className="text-center border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                   1
                 </th>
-                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                <td className="text-center border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                   Dakota Rice
                 </td>
-                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                  <Button
-                    color="amber"
-                    buttonType="link"
-                    size="lg"
-                    style={{ padding: 8 }}
-                  >
-                    <Link href="/admin/edit-beasiswa">Edit</Link>
-                  </Button>
-                </td>
-                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                  <Button
-                    color="blueGray"
-                    buttonType="link"
-                    size="lg"
-                    style={{ padding: 8 }}
-                  >
-                    <Link href="/admin/list-pendaftar">Detail</Link>
-                  </Button>
+                <td className=" border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                  <div className="text-center flex space-x-4 justify-center">
+                    <div>
+                      <Button color="amber" size="lg" style={{ padding: 8 }}>
+                        <Link href="/admin/edit-beasiswa">Edit</Link>
+                      </Button>
+                    </div>
+
+                    <div>
+                      <Button color="blueGray" size="lg" style={{ padding: 8 }}>
+                        <Link href="/admin/list-pendaftar">Detail</Link>
+                      </Button>
+                    </div>
+                  </div>
                 </td>
               </tr>
               <tr>
-                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                <th className="text-center border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                   2
                 </th>
-                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                <td className="text-center border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                   Minerva Hooper
                 </td>
                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                  <Button
-                    color="amber"
-                    buttonType="link"
-                    size="lg"
-                    style={{ padding: 8 }}
-                  >
-                    <Link href="/admin/edit-beasiswa">Edit</Link>
-                  </Button>
-                </td>
-                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                  <Button
-                    color="blueGray"
-                    buttonType="link"
-                    size="lg"
-                    style={{ padding: 8 }}
-                  >
-                    <Link href="/admin/list-pendaftar">Detail</Link>
-                  </Button>
+                  <div className="text-center flex space-x-4 justify-center">
+                    <div>
+                      <Button color="amber" size="lg" style={{ padding: 8 }}>
+                        <Link href="/admin/edit-beasiswa">Edit</Link>
+                      </Button>
+                    </div>
+
+                    <div>
+                      <Button color="blueGray" size="lg" style={{ padding: 8 }}>
+                        <Link href="/admin/list-pendaftar">Detail</Link>
+                      </Button>
+                    </div>
+                  </div>
                 </td>
               </tr>
               <tr>
-                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                <th className="text-center border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                   3
                 </th>
-                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                <td className="text-center border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                   Sage Rodriguez
                 </td>
                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                  <Button
-                    color="amber"
-                    buttonType="link"
-                    size="lg"
-                    style={{ padding: 8 }}
-                  >
-                    <Link href="/admin/edit-beasiswa">Edit</Link>
-                  </Button>
-                </td>
-                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                  <Button
-                    color="blueGray"
-                    buttonType="link"
-                    size="lg"
-                    style={{ padding: 8 }}
-                  >
-                    <Link href="/admin/list-pendaftar">Detail</Link>
-                  </Button>
+                  <div className="text-center flex space-x-4 justify-center">
+                    <div>
+                      <Button color="amber" size="lg" style={{ padding: 8 }}>
+                        <Link href="/admin/edit-beasiswa">Edit</Link>
+                      </Button>
+                    </div>
+
+                    <div>
+                      <Button color="blueGray" size="lg" style={{ padding: 8 }}>
+                        <Link href="/admin/list-pendaftar">Detail</Link>
+                      </Button>
+                    </div>
+                  </div>
                 </td>
               </tr>
               <tr>
-                <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                <th className="text-center border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                   4
                 </th>
-                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
+                <td className="text-center border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                   Philip Chaney
                 </td>
                 <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                  <Button
-                    color="amber"
-                    buttonType="link"
-                    size="lg"
-                    style={{ padding: 8 }}
-                  >
-                    <Link href="/admin/edit-beasiswa">Edit</Link>
-                  </Button>
-                </td>
-                <td className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
-                  <Button
-                    color="blueGray"
-                    buttonType="link"
-                    size="lg"
-                    style={{ padding: 8 }}
-                  >
-                    <Link href="/admin/list-pendaftar">Detail</Link>
-                  </Button>
+                  <div className="text-center flex space-x-4 justify-center">
+                    <div>
+                      <Button color="amber" size="lg" style={{ padding: 8 }}>
+                        <Link href="/admin/edit-beasiswa">Edit</Link>
+                      </Button>
+                    </div>
+
+                    <div>
+                      <Button color="blueGray" size="lg" style={{ padding: 8 }}>
+                        <Link href="/admin/list-pendaftar">Detail</Link>
+                      </Button>
+                    </div>
+                  </div>
                 </td>
               </tr>
             </tbody>

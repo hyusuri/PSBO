@@ -1,12 +1,11 @@
 import { useState } from "react";
 import { MdDashboard } from "react-icons/md";
 import { MdAddCircle } from "react-icons/md";
+import Image from "next/image";
 import NavItem from "@material-tailwind/react/NavItem";
 import NavLink from "@material-tailwind/react/NavLink";
 
 // import { Link } from "react-router-dom";
-
-import AdminNavbar from "./adminNavbar";
 import Icon from "@material-tailwind/react/Icon";
 import H6 from "@material-tailwind/react/Heading6";
 import Link from "next/link";
@@ -18,7 +17,7 @@ export default function Sidebar() {
     <>
       {/* <AdminNavbar showSidebar={showSidebar} setShowSidebar={setShowSidebar} /> */}
       <div
-        className={`h-screen fixed top-0 md:left-0 ${showSidebar} overflow-y-auto flex-row flex-nowrap overflow-hidden shadow-xl bg-white w-64 z-10 py-4 px-6 transition-all duration-300`}
+        className={`fixed h-screen fixed top-0 md:left-0 ${showSidebar} overflow-y-auto flex-row flex-nowrap overflow-hidden shadow-xl bg-white w-64 z-10 py-4 px-6 transition-all duration-300`}
       >
         <div className="flex-col items-stretch min-h-full flex-nowrap px-0 relative">
           <a
@@ -26,7 +25,8 @@ export default function Sidebar() {
             rel="noreferrer"
             className="mt-2 text-center w-full inline-block"
           >
-            <H6 color="gray">IPB Scholar</H6>
+            <Image src="/logo_hitam.png" width={130} height={35} />
+            {/* <H6 color="gray">IPB Scholar</H6> */}
           </a>
           <div className="flex flex-col">
             <hr className="my-4 min-w-full" />
@@ -78,7 +78,7 @@ export default function Sidebar() {
                   Maps
                 </Link>
               </li> */}
-              <li className="px-4 rounded-lg mb-2 text-gray-700">
+              <li className="hover:bg-blue-900 hover:text-white px-4 rounded-lg mb-2 text-gray-700">
                 <a
                   href="http://localhost:3000/admin"
                   //   target="_blank"
@@ -93,7 +93,7 @@ export default function Sidebar() {
                 </a>
               </li>
 
-              <li className="px-4 rounded-lg mb-2 text-gray-700">
+              <li className="hover:bg-blue-900 hover:text-white px-4 rounded-lg mb-2 text-gray-700">
                 <a
                   href="http://localhost:3000/admin/tambah-beasiswa"
                   //   target="_blank"

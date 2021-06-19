@@ -187,7 +187,7 @@ const Profile = ({ user_data, cookies }) => {
         </div>
 
         <div className="grid justify-items-center text-center m-10 space-y-2">
-          <label for="foto">Ubah Foto</label>
+          <label>Ubah Foto</label>
           <div>
             <input id="foto" type="file"></input>
           </div>
@@ -199,7 +199,7 @@ const Profile = ({ user_data, cookies }) => {
         <div className="text-center m-8 md:flex rounded-xl p-8 md:p-0 gap-x-16 justify-center">
           <form onSubmit={handleSubmitktm}>
             <div className="m-10 space-y-2">
-              <label for="ktm">Kartu Tanda Mahasiswa</label>
+              <label>Kartu Tanda Mahasiswa</label>
               <div>
                 <a
                   href={"http://34.101.142.194:3001/" + cookies.link_ktm}
@@ -221,9 +221,7 @@ const Profile = ({ user_data, cookies }) => {
 
           <form onSubmit={handleSubmitkk}>
             <div className="m-10 space-y-2">
-              <label className="mr-10" for="kk">
-                Kartu Keluarga
-              </label>
+              <label className="mr-10">Kartu Keluarga</label>
               <div>
                 <a
                   href={"http://34.101.142.194:3001/" + cookies.link_kk}
@@ -252,8 +250,8 @@ const Profile = ({ user_data, cookies }) => {
         <p className="tes"> You clicked {count} times </p>
       </div> */}
 
-      <div className="grid justify-items-center">
-        <section className="input_section">
+      <div className="grid justify-items-center space-y-2">
+        <section className=" input_section">
           <h2>Tambah Berkas Baru</h2>
           <form id="inputBeasiswa">
             <div className="input">
@@ -267,12 +265,14 @@ const Profile = ({ user_data, cookies }) => {
                 required
               />
             </div>
-            <div className="space-y-8">
+            <div className="">
               <input id="" type="file"></input>
             </div>
-            <Button className=" " type="submit">
-              Tambah
-            </Button>
+            <div className="mt-2 ml-24">
+              <Button className=" " type="submit">
+                Tambah
+              </Button>
+            </div>
           </form>
         </section>
       </div>

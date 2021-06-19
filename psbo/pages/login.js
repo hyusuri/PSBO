@@ -18,6 +18,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
+import { route } from "next/dist/next-server/server/router";
 
 const LoginPage = () => {
   const [user, setUser] = useState(null);
@@ -69,14 +70,22 @@ const LoginPage = () => {
         Cookies.set("username", Username);
         setError({ error: "" });
 
-        Cookies.set("counter", 0);
+        //Set username here for admin role
+        if (Cookies.get("username") === "null") {
+          Cookies.set("role", "admin");
+          if (Cookies.get("role" === "admin")) {
+            router.push("/admin");
+          }
+        } else {
+          Cookies.set("counter", 0);
 
-        setUser(localStorage.getItem("userAuth"));
+          setUser(localStorage.getItem("userAuth"));
 
-        localStorage.setItem("userAuth", res.data.Username);
-        localStorage.setItem("token", Token);
+          localStorage.setItem("userAuth", res.data.Username);
+          localStorage.setItem("token", Token);
 
-        router.push("/home");
+          router.push("/home");
+        }
       })
       .catch((err) => {
         console.log("API login error : ", err);
