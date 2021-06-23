@@ -105,7 +105,7 @@ Saran untuk pengembangan sistem selanjutnya, antara lain :
 |---|---|---|
 |G64180007|Arya Aminata|Analyst & Project Manager|
 |G64180036|Hafizh Yusuf Buchori|Frontend & Backend Developer|
-|G64180064|Muhammad Rayhan Adyatma|UI Designer|
+|G64180064|Muhammad Rayhan Adyatma|UI & Database Designer|
 |G64180075|Pradhipta Trimanggala Satya|Backend Developer|
 |G64180084|Faiz Muhammad 'Alauddin|Frontend Developer|
 
